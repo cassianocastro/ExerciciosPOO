@@ -13,12 +13,14 @@ public class Manutencao implements NewInterface{
     public void escolher(){
         int retorno;
         while ( true ) {
-            retorno = JOptionPane.showOptionDialog(null, "Selecione uma opção:", "Opções",
-                      JOptionPane.DEFAULT_OPTION,
-                      JOptionPane.INFORMATION_MESSAGE,
-                      null,
-                      new String[] {"Inserir", "Listar", "Remover", "Alterar", "Voltar"},
-                      null );
+            retorno = JOptionPane.showOptionDialog(
+                null, "Selecione uma opção:", "Opções",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                new String[] {"Inserir", "Listar", "Remover", "Alterar", "Voltar"},
+                null 
+            );
             switch ( retorno ){
                 case 0:
                     inserir();
@@ -52,16 +54,20 @@ public class Manutencao implements NewInterface{
         while ( this.manutencao.existe(ID) ){
             ID  = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
-        Object defeito = JOptionPane.showInputDialog( null, "Tipo de Problema:", "Descrição",
-                         JOptionPane.QUESTION_MESSAGE,
-                         null,
-                         new String[] {"Hardware", "Software"},
-                         null );
-        Object tipo =    JOptionPane.showInputDialog(null, "Tipo de Aparelho:", null,
-                         JOptionPane.QUESTION_MESSAGE,
-                         null,
-                         new String[] {"Celular", "Notebook"},
-                         null );
+        Object defeito = JOptionPane.showInputDialog(
+            null, "Tipo de Problema:", "Descrição",
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            new String[] {"Hardware", "Software"},
+            null
+        );
+        Object tipo = JOptionPane.showInputDialog(
+            null, "Tipo de Aparelho:", null,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            new String[] {"Celular", "Notebook"},
+            null
+        );
     }
     
     @Override
