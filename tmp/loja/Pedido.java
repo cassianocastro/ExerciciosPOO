@@ -38,7 +38,7 @@ public class Pedido
     public StringBuilder getItemPedido()
     {
         StringBuilder msg = new StringBuilder();
-        
+
         for ( ItemPedido itemPedido : this.carrinho )
         {
             msg.append(itemPedido.getDados());

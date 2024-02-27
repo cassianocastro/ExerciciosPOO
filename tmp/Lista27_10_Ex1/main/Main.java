@@ -18,7 +18,7 @@ public class Main
         pessoa2.setAltura(1.75f);
         pessoa2.setData_nasc("03/09/1995");
         pessoa2.setNome("Maria");
-        
+
         pessoa2.imprimeDados();
     }
 

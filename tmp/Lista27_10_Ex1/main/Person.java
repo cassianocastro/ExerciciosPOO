@@ -57,7 +57,7 @@ public class Person
     public void imprimeDados()
     {
         StringBuilder msg = new StringBuilder(200);
-        
+
         msg.append("Nome: ")
            .append(this.nome);
         msg.append("\nAltura: ")
