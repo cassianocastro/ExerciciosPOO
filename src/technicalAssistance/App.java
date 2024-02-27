@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 /**
  *
- *
  */
 public class App
 {
@@ -13,6 +12,7 @@ public class App
     {
         Maintenance maintenance = new Maintenance();
         Queue queue = new Queue();
+
         int retorno;
 
         while ( true )
@@ -30,6 +30,7 @@ public class App
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:

@@ -2,6 +2,9 @@ package v2;
 
 import javax.swing.JOptionPane;
 
+/**
+ *
+ */
 public class Person
 {
 
@@ -15,6 +18,7 @@ public class Person
         this.nome      = nome;
         this.data_nasc = data_nasc;
         this.altura    = altura;
+
         this.calculaIdade();
     }
 
@@ -38,6 +42,7 @@ public class Person
     public void setData_nasc(String data_nasc)
     {
         this.data_nasc = data_nasc;
+
         calculaIdade();
     }
 

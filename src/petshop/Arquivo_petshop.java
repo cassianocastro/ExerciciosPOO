@@ -6,7 +6,6 @@ import javax.swing.*;
 
 /**
  *
- *
  */
 public class Arquivo_petshop
 {
@@ -27,7 +26,8 @@ public class Arquivo_petshop
                 new FileOutputStream(file)))
         {
             output.writeObject(lista);
-        } catch (IOException e)
+        }
+		catch ( IOException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -42,16 +42,19 @@ public class Arquivo_petshop
         {
             object = input.readObject();
             lista2 = (List<Racao>) object;
-        } catch (IOException | ClassNotFoundException e)
+        }
+		catch ( IOException | ClassNotFoundException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
 
         StringBuilder msg = new StringBuilder();
+
         for ( Racao i : lista2 )
         {
             msg.append(i.getDados());
         }
+
         JOptionPane.showMessageDialog(null, msg);
     }
 }

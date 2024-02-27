@@ -25,6 +25,7 @@ public class Main
                 + "'r' - para remover uma pessoa\n'l' - para listar toda a agenda\n"
                 + "'p' - para listar uma pessoa\n's' - para sair"
             ).charAt(0);
+
             switch ( opt )
             {
                 case 's':
@@ -44,13 +45,11 @@ public class Main
                     int index = Integer.parseInt(JOptionPane.showInputDialog("Digite o index da pessoa"));
                     ag.imprimePessoa(index);
             }
-
         }
     }
 
     public static void adicionaPessoa(Agenda ag)
     {
-
         String nome, data_nasc, CPF, CNPJ, endereco, telefone, data_fund;
 
         char opt = JOptionPane.showInputDialog(
@@ -79,5 +78,4 @@ public class Main
                 ag.armazenaPessoaJuridica(nome, endereco, telefone, CNPJ, data_fund);
         }
     }
-
 }

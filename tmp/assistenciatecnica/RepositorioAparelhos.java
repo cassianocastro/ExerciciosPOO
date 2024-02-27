@@ -38,15 +38,18 @@ public class RepositorioAparelhos implements Serializable
 
     public StringBuilder exibir()
     {
-        if ( !this.defeituosos.isEmpty() )
+        if ( ! this.defeituosos.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
+
             this.defeituosos.keySet().forEach((ID) ->
             {
                 msg.append(this.defeituosos.get(ID).getEspecificacoes());
             });
+
             return msg;
         }
+
         return new StringBuilder("Manutenção Vazia");
     }
 }

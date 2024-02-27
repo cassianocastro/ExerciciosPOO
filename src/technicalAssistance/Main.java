@@ -2,7 +2,6 @@ package technicalAssistance;
 
 /**
  *
- *
  */
 public class Main
 {

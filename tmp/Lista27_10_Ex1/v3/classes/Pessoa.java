@@ -32,6 +32,7 @@ public class Pessoa
     public String getDados()
     {
         String msg = "";
+
         msg += "Nome: "       + this.nome;
         msg += "\nTelefone: " + this.telefone;
         msg += "\nEndereço: " + this.endereco + "\n";

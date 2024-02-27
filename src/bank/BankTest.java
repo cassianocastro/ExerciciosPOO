@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 /**
  *
- *
  */
 public class BankTest
 {
@@ -32,6 +31,7 @@ public class BankTest
             },
             null
         );
+
         switch ( retorno )
         {
             case 0:
@@ -46,7 +46,9 @@ public class BankTest
             default:
                 conta = new CurrentPhysicalPerson(num_conta, num_agencia, senha, saldo, "0.05");
         }
+
         banco.add(conta);
+
         JOptionPane.showMessageDialog(null, "Conta criada.");
     }
 
@@ -70,6 +72,7 @@ public class BankTest
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -86,6 +89,7 @@ public class BankTest
                 default:
                     return;
             }
+
             JOptionPane.showMessageDialog(null, "Operação realizada.");
         }
     }
@@ -111,6 +115,7 @@ public class BankTest
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -123,7 +128,8 @@ public class BankTest
                     if ( conta != null )
                     {
                         testShowMenu(conta);
-                    } else
+                    }
+					else
                     {
                         JOptionPane.showMessageDialog(
                             null,
@@ -135,6 +141,7 @@ public class BankTest
                     break;
                 case 2:
                     String msg = banco.exibir();
+
                     JOptionPane.showMessageDialog(
                         null,
                         msg != null ? msg : "Sem contas cadastradas."
@@ -142,6 +149,7 @@ public class BankTest
                     break;
                 case 3:
                     senha = JOptionPane.showInputDialog("Senha da conta:");
+
                     JOptionPane.showMessageDialog(
                         null,
                         banco.remove(senha) ? "Conta encerrada." : "Conta não encontrada."
@@ -149,6 +157,7 @@ public class BankTest
                     break;
                 case 4:
                     banco.corrigir();
+
                     JOptionPane.showMessageDialog(null, "Correções aplicadas.");
                     break;
                 default:

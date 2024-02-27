@@ -2,6 +2,9 @@ package assistenciatecnica;
 
 import javax.swing.*;
 
+/**
+ *
+ */
 public class Manutencao implements NewInterface
 {
 
@@ -32,6 +35,7 @@ public class Manutencao implements NewInterface
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -70,6 +74,7 @@ public class Manutencao implements NewInterface
         {
             ID = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
+
         Object defeito = JOptionPane.showInputDialog(
             null,
             "Tipo de Problema:",
@@ -82,6 +87,7 @@ public class Manutencao implements NewInterface
             },
             null
         );
+
         Object tipo = JOptionPane.showInputDialog(
             null,
             "Tipo de Aparelho:",
@@ -101,12 +107,15 @@ public class Manutencao implements NewInterface
     {
         int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( !this.manutencao.existe(ID) )
+        if ( ! this.manutencao.existe(ID) )
         {
             JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
+
             return;
         }
+
         this.manutencao.remover(ID);
+
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
 
@@ -126,12 +135,15 @@ public class Manutencao implements NewInterface
     {
         int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( !this.manutencao.existe(ID) )
+        if ( ! this.manutencao.existe(ID) )
         {
             JOptionPane.showMessageDialog(null, "ID não encontrado.");
+
             return;
         }
+
         Aparelho temporario = this.manutencao.edicao(ID);
+
         Object retorno = JOptionPane.showInputDialog(
             null,
             "Escolha o tipo de dado:",
@@ -144,6 +156,7 @@ public class Manutencao implements NewInterface
             },
             null
         );
+
         switch ( retorno.toString() )
         {
             case "Marca":
@@ -179,6 +192,7 @@ public class Manutencao implements NewInterface
                     },
                     null
                 );
+
                 temporario.setDefeito(defeito.toString());
         }
     }

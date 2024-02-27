@@ -29,9 +29,15 @@ abstract public class Aparelho implements Serializable, Comparable<Aparelho>
     public int compareTo(Aparelho outro_aparelho)
     {
         if ( this.ID < outro_aparelho.getID() )
+		{
             return -1;
+		}
+
         if ( this.ID > outro_aparelho.getID() )
+		{
             return 1;
+		}
+
         return 0;
     }
 
@@ -87,5 +93,4 @@ abstract public class Aparelho implements Serializable, Comparable<Aparelho>
     {
         this.tamanho_tela = tamanho_tela;
     }
-
 }

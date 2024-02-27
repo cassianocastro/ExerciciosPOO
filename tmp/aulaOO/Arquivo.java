@@ -16,26 +16,32 @@ public class Arquivo
                 new FileOutputStream(file)))
         {
             output.writeObject(object);
-        } catch (IOException e)
+        }
+		catch ( IOException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
+
             return false;
         }
+
         return true;
     }
 
     public Object ler(File file)
     {
         Object object = null;
+
         try (ObjectInputStream input
             = new ObjectInputStream(
                 new FileInputStream(file)))
         {
             object = input.readObject();
-        } catch (IOException | ClassNotFoundException e)
+        }
+		catch ( IOException | ClassNotFoundException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
+
         return object;
     }
 }

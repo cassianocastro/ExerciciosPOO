@@ -13,6 +13,7 @@ public class Arquivo_petshop
     public static void main(String[] args)
     {
         File file = new File("racoes.dat");
+
         List<Racao> lista = new ArrayList<>();
 
         lista.add(new Racao("Pedigree", 5.0));
@@ -26,7 +27,8 @@ public class Arquivo_petshop
                 new FileOutputStream(file)))
         {
             output.writeObject(lista);
-        } catch (IOException e)
+        }
+		catch ( IOException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -41,7 +43,8 @@ public class Arquivo_petshop
         {
             object = input.readObject();
             lista2 = (List<Racao>) object;
-        } catch (IOException | ClassNotFoundException e)
+        }
+		catch ( IOException | ClassNotFoundException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -52,6 +55,7 @@ public class Arquivo_petshop
         {
             msg.append(i.getDados());
         }
+
         JOptionPane.showMessageDialog(null, msg);
     }
 }

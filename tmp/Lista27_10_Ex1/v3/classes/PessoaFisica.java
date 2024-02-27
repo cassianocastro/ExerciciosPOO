@@ -18,9 +18,11 @@ public class PessoaFisica extends Pessoa
     public PessoaFisica(String nome, String endereco, String fone, float altura, String data_nasc, String CPF)
     {
         super(nome, endereco, fone);
+
         this.altura    = altura;
         this.data_nasc = data_nasc;
         this.CPF       = CPF;
+
         this.calculaIdade();
     }
 
@@ -47,6 +49,7 @@ public class PessoaFisica extends Pessoa
     public void setData_nasc(String data_nasc)
     {
         this.data_nasc = data_nasc;
+
         calculaIdade();
     }
 
@@ -54,6 +57,7 @@ public class PessoaFisica extends Pessoa
     public void imprimeDados()
     {
         String msg = getDados();
+
         JOptionPane.showMessageDialog(null, msg);
     }
 

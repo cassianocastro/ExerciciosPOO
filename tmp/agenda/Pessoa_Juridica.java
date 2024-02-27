@@ -12,6 +12,7 @@ final public class Pessoa_Juridica extends Pessoa
     public Pessoa_Juridica(String nome, String endereco, String telefone, String CNPJ, String date_foundation)
     {
         super(nome, endereco, telefone);
+
         this.CNPJ            = CNPJ;
         this.date_foundation = date_foundation;
     }

@@ -15,7 +15,8 @@ public class Main
     {
         Agenda ag = new Agenda();
         String nome, data_nasc;
-        float altura; char opt = ' ';
+        float altura;
+		char opt = ' ';
 
         while ( opt != 's' )
         {
@@ -25,6 +26,7 @@ public class Main
                 + "'r' - para remover uma pessoa\n'l' - para listar toda a agenda\n"
                 + "'p' - para listar uma pessoa\n's' - para sair"
             ).charAt(0);
+
             switch ( opt )
             {
                 case 's':
@@ -48,8 +50,6 @@ public class Main
                     int index = Integer.parseInt(JOptionPane.showInputDialog("Digite o index da pessoa"));
                     ag.imprimePessoa(index);
             }
-
         }
     }
-
 }

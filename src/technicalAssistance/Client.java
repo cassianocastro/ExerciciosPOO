@@ -6,7 +6,6 @@ import java.util.*;
 
 /**
  *
- *
  */
 public class Client implements Serializable, Comparable<Client>
 {
@@ -35,12 +34,12 @@ public class Client implements Serializable, Comparable<Client>
 
     public String exibir()
     {
-        return "\nNome: " + this.name
-            + "\nCPF: " + this.cpf
+        return "\nNome: "              + this.name
+            + "\nCPF: "                + this.cpf
             + "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format(this.birthDate)
-            + "\nE-mail: " + this.email
-            + "\nTelefone: " + this.phone
-            + "\nID do Aparelho: " + this.device.getID();
+            + "\nE-mail: "             + this.email
+            + "\nTelefone: "           + this.phone
+            + "\nID do Aparelho: "     + this.device.getID();
     }
 
     public Device getDevice()

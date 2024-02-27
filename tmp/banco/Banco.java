@@ -23,11 +23,14 @@ public class Banco
     public boolean remove(String senha)
     {
         Conta conta = existe(senha);
+
         if ( conta != null )
         {
             this.contas.remove(conta);
+
             return true;
         }
+
         return false;
     }
 
@@ -36,13 +39,16 @@ public class Banco
         if ( ! this.contas.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
-            for ( Conta conta : this.contas )
+
+			for ( Conta conta : this.contas )
             {
                 msg.append(conta.getDados());
                 msg.append("\n***\n");
             }
+
             return msg;
         }
+
         return null;
     }
 
@@ -55,6 +61,7 @@ public class Banco
                 return conta;
             }
         }
+
         return null;
     }
 

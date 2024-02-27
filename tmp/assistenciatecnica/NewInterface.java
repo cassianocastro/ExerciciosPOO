@@ -19,5 +19,4 @@ public interface NewInterface
     public void abrir();
 
     public void escolher();
-
 }

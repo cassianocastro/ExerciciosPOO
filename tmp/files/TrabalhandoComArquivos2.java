@@ -25,13 +25,16 @@ public class TrabalhandoComArquivos2
                 {
                     msg.append(line);
                     msg.append("\n");
-                } else
+                }
+				else
                     throw new EOFException("Arquivo lido.");
             }
-        } catch (IOException e)
+        }
+		catch ( IOException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
+
         String novaLinha = JOptionPane.showInputDialog(null, msg + "\n\nDigite a linha nova:");
 
         if ( novaLinha != null )
@@ -43,7 +46,8 @@ public class TrabalhandoComArquivos2
                     new FileWriter(file)))
             {
                 writer.write(msg.toString());
-            } catch (IOException e)
+            }
+			catch ( IOException e )
             {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }

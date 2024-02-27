@@ -5,7 +5,6 @@ import java.io.*;
 
 /**
  *
- *
  */
 public class ClientRepository implements Serializable
 {
@@ -31,6 +30,7 @@ public class ClientRepository implements Serializable
                 return true;
             }
         }
+
         return false;
     }
 
@@ -44,13 +44,15 @@ public class ClientRepository implements Serializable
         if ( ! this.clients.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
-            
+
             for ( Client client : this.clients )
             {
                 msg.append(client.exibir()).append("\n----");
             }
+
             return msg.toString();
         }
+
         return "Fila Vazia";
     }
 }

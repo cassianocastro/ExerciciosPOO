@@ -2,7 +2,6 @@ package bank;
 
 /**
  *
- *
  */
 public class CurrentJuridicalPerson extends Account
 {

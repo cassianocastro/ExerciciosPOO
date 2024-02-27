@@ -48,10 +48,12 @@ public class Agenda
                 pos = this.pessoas.indexOf(p);
             }
         }
+
         if ( pos < 0 )
         {
             JOptionPane.showMessageDialog(null, "Pessoa não encontrada");
         }
+
         return pos;
     }
 
@@ -65,8 +67,10 @@ public class Agenda
             {
                 msg += p.getDados() + "\n";
             }
+
             JOptionPane.showMessageDialog(null, "Agenda: \n" + msg);
-        } else
+        }
+		else
         {
             JOptionPane.showMessageDialog(null, "Agenda vazia!");
         }
@@ -80,7 +84,8 @@ public class Agenda
                 this.pessoas.get(index).imprimeDados();
             else
                 JOptionPane.showMessageDialog(null, "Index inválido");
-        } else
+        }
+		else
         {
             JOptionPane.showMessageDialog(null, "Agenda vazia!");
         }

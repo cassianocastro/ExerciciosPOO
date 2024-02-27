@@ -15,6 +15,7 @@ public class AssistenciaTecnica
     {
         Manutencao classe  = new Manutencao();
         FilaEspera classe1 = new FilaEspera();
+
         int retorno;
 
         while ( true )
@@ -32,6 +33,7 @@ public class AssistenciaTecnica
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:

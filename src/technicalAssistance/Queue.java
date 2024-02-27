@@ -4,7 +4,6 @@ import javax.swing.*;
 
 /**
  *
- *
  */
 public class Queue
 {
@@ -19,6 +18,7 @@ public class Queue
     public void escolher()
     {
         int retorno;
+
         while ( true )
         {
             retorno = JOptionPane.showOptionDialog(
@@ -34,6 +34,7 @@ public class Queue
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -70,12 +71,16 @@ public class Queue
     private void remover()
     {
         String CPF = JOptionPane.showInputDialog("Informe o CPF do cliente:");
-        if ( !this.fila.exists(CPF) )
+
+        if ( ! this.fila.exists(CPF) )
         {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
+
             return;
         }
+
         // this.fila.remover( cliente );
+
         JOptionPane.showMessageDialog(null, "Cliente removido.");
     }
 

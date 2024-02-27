@@ -27,7 +27,7 @@ public class Produto
     public String getDados()
     {
         return "\nCódigo: " + this.codigo
-            + "\nNome: " + this.nome
-            + "\nPreço: " + this.valor.toString();
+            + "\nNome: "    + this.nome
+            + "\nPreço: "   + this.valor.toString();
     }
 }

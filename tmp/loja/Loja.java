@@ -17,7 +17,7 @@ public class Loja
         String valor = JOptionPane.showInputDialog("Valor:");
         int codigo   = Integer.parseInt(JOptionPane.showInputDialog("Código:"));
 
-        Produto produto = new Produto( codigo, nome, valor );
+        Produto produto = new Produto(codigo, nome, valor);
 
         int retorno = JOptionPane.showConfirmDialog(
             null,
@@ -34,9 +34,10 @@ public class Loja
                 "Informe a quantidade do produto:"
             ));
 
-            ItemPedido item = new ItemPedido( produto, qtde );
+            ItemPedido item = new ItemPedido(produto, qtde);
             Pedido pedido   = new Pedido();
-            pedido.add( item );
+
+			pedido.add(item);
 
             JOptionPane.showMessageDialog(
                 null,
@@ -45,5 +46,4 @@ public class Loja
             );
         }
     }
-
 }

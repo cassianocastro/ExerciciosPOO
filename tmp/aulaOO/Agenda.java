@@ -47,13 +47,16 @@ public class Agenda implements Serializable
         if ( ! this.agenda.isEmpty() )
         {
             StringBuilder mensagem = new StringBuilder("Pessoas cadastradas:\n");
-            for ( Pessoa pessoa : this.agenda.values() )
+
+			for ( Pessoa pessoa : this.agenda.values() )
             {
                 mensagem.append(pessoa.getDados());
                 mensagem.append("\n***\n");
             }
+
             return mensagem;
         }
+
         return new StringBuilder("Agenda Vazia.");
     }
 

@@ -29,9 +29,13 @@ public class Pedido
         {
             this.valor_total
                 = this.valor_total
-                    .add(itemPedido.getPreco()
-                    .multiply(new BigDecimal(itemPedido.getQuantidade())));
+                    .add(
+						itemPedido.getPreco().multiply(
+							new BigDecimal(itemPedido.getQuantidade())
+						)
+					);
         }
+
         return this.valor_total;
     }
 
@@ -43,6 +47,7 @@ public class Pedido
         {
             msg.append(itemPedido.getDados());
         }
+
         return msg;
     }
 }

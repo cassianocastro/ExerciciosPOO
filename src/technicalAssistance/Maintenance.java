@@ -4,7 +4,6 @@ import javax.swing.*;
 
 /**
  *
- *
  */
 public class Maintenance
 {
@@ -19,6 +18,7 @@ public class Maintenance
     public void escolher()
     {
         int retorno;
+
         while ( true )
         {
             retorno = JOptionPane.showOptionDialog(
@@ -34,6 +34,7 @@ public class Maintenance
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -71,6 +72,7 @@ public class Maintenance
         {
             ID = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
+
         Object defeito = JOptionPane.showInputDialog(
             null,
             "Tipo de Problema:",
@@ -83,6 +85,7 @@ public class Maintenance
             },
             null
         );
+
         Object tipo = JOptionPane.showInputDialog(
             null,
             "Tipo de Aparelho:",
@@ -101,12 +104,15 @@ public class Maintenance
     {
         int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( !this.manutencao.existe(ID) )
+        if ( ! this.manutencao.existe(ID) )
         {
             JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
+
             return;
         }
+
         this.manutencao.remover(ID);
+
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
 
@@ -124,11 +130,13 @@ public class Maintenance
     {
         int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( !this.manutencao.existe(ID) )
+        if ( ! this.manutencao.existe(ID) )
         {
             JOptionPane.showMessageDialog(null, "ID não encontrado.");
+
             return;
         }
+
         Device temporario = this.manutencao.edicao(ID);
         Object retorno = JOptionPane.showInputDialog(
             null,
@@ -142,6 +150,7 @@ public class Maintenance
             },
             null
         );
+
         switch ( retorno.toString() )
         {
             case "Marca":

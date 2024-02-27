@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  *
- *
  */
 abstract public class Device implements Serializable, Comparable<Device>
 {
@@ -38,10 +37,12 @@ abstract public class Device implements Serializable, Comparable<Device>
         {
             return -1;
         }
+
         if ( this.id > other.getID() )
         {
             return 1;
         }
+
         return 0;
     }
 

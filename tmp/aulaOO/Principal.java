@@ -13,7 +13,7 @@ public class Principal
     {
         int opcao;
         Metodos metodo = new Metodos();
-        
+
         while ( true )
         {
             try
@@ -32,6 +32,7 @@ public class Principal
                     },
                     null
                 );
+
                 switch ( opcao )
                 {
                     case 0:
@@ -55,7 +56,8 @@ public class Principal
                     default:
                         System.exit(0);
                 }
-            } catch (ParseException e)
+            }
+			catch ( ParseException e )
             {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }

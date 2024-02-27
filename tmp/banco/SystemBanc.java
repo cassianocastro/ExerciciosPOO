@@ -31,6 +31,7 @@ public class SystemBanc
             },
             null
         );
+
         switch ( retorno )
         {
             case 0:
@@ -45,7 +46,9 @@ public class SystemBanc
             default:
                 conta = new CorrentePessoaFisica(num_conta, num_agencia, senha, saldo, "0.05");
         }
+
         banco.add(conta);
+
         JOptionPane.showMessageDialog(null, "Conta criada.");
     }
 
@@ -69,6 +72,7 @@ public class SystemBanc
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -85,6 +89,7 @@ public class SystemBanc
                 default:
                     return;
             }
+
             JOptionPane.showMessageDialog(null, "Operação realizada.");
         }
     }
@@ -110,6 +115,7 @@ public class SystemBanc
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -122,7 +128,8 @@ public class SystemBanc
                     if ( conta != null )
                     {
                         menuOpcoes(conta);
-                    } else
+                    }
+					else
                     {
                         JOptionPane.showMessageDialog(
                             null,
@@ -134,6 +141,7 @@ public class SystemBanc
                     break;
                 case 2:
                     StringBuilder msg = banco.exibir();
+
                     JOptionPane.showMessageDialog(
                         null,
                         ( msg != null ) ? msg : "Sem contas cadastradas."
@@ -141,6 +149,7 @@ public class SystemBanc
                     break;
                 case 3:
                     senha = JOptionPane.showInputDialog("Senha da conta:");
+
                     JOptionPane.showMessageDialog(
                         null,
                         banco.remove(senha) ? "Conta encerrada." : "Conta não encontrada."
@@ -148,6 +157,7 @@ public class SystemBanc
                     break;
                 case 4:
                     banco.corrigir();
+
                     JOptionPane.showMessageDialog(null, "Correções aplicadas.");
                     break;
                 default:

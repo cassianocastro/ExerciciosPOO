@@ -28,6 +28,7 @@ public class Metodos
         );
 
         Pessoa pessoa = new Pessoa(Nome, Nacionalidade, Sexo, DataNasc);
+
         this.agenda.add(ID, pessoa);
     }
 
@@ -38,9 +39,12 @@ public class Metodos
         if ( ! this.agenda.existe(ID) )
         {
             JOptionPane.showMessageDialog(null, "ID inexistente", "Erro", JOptionPane.ERROR_MESSAGE);
+
             return;
         }
+
         this.agenda.remove(ID);
+
         JOptionPane.showMessageDialog(null, "Pessoa removida", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -53,11 +57,13 @@ public class Metodos
     {
         int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID da Pessoa:"));
 
-        if ( !this.agenda.existe(ID) )
+        if ( ! this.agenda.existe(ID) )
         {
             JOptionPane.showMessageDialog(null, "ID inexistente", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
+
+			return;
         }
+
         Object dado  = null;
         Object opcao = JOptionPane.showInputDialog(
             null,
@@ -71,13 +77,14 @@ public class Metodos
             },
             null
         );
+
         switch ( opcao.toString() )
         {
             case "Nome":
                 dado = JOptionPane.showInputDialog("Novo Nome:");
                 break;
             case "Sexo":
-                dado = ( JOptionPane.showInputDialog("Novo Sexo:") ).charAt(0);
+                dado = (JOptionPane.showInputDialog("Novo Sexo:")).charAt(0);
                 break;
             case "Nacionalidade":
                 dado = JOptionPane.showInputDialog("Nova Nacionalidade:");
@@ -85,6 +92,7 @@ public class Metodos
             case "Data de Nascimento":
                 dado = JOptionPane.showInputDialog("Nova Data de Nascimento:");
         }
+
         this.agenda.alterar(ID, dado, opcao.toString());
     }
 
@@ -102,7 +110,8 @@ public class Metodos
                 JOptionPane.showMessageDialog(null, "Dados Salvos.");
             else
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro.", "Erro", JOptionPane.ERROR_MESSAGE);
-        } else if ( opcao == JFileChooser.CANCEL_OPTION )
+        }
+		else if ( opcao == JFileChooser.CANCEL_OPTION )
         {
             JOptionPane.showMessageDialog(null, "Op. cancelada.");
         }
@@ -119,7 +128,8 @@ public class Metodos
             Map novoMap = (Map<Integer, Pessoa>) arquivo.ler(chooser.getSelectedFile());
             this.agenda.setMap(novoMap);
             JOptionPane.showMessageDialog(null, "Dados lidos com sucesso.");
-        } else if ( opcao == JFileChooser.CANCEL_OPTION )
+        }
+		else if ( opcao == JFileChooser.CANCEL_OPTION )
         {
             JOptionPane.showMessageDialog(null, "Op. cancelada.");
         }

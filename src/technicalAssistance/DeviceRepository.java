@@ -5,7 +5,6 @@ import java.util.*;
 
 /**
  *
- *
  */
 public class DeviceRepository implements Serializable
 {
@@ -42,13 +41,15 @@ public class DeviceRepository implements Serializable
         if ( ! this.defectives.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
-            
+
             this.defectives.keySet().forEach((ID) ->
             {
                 msg.append(this.defectives.get(ID).getEspecificacoes());
             });
+
             return msg.toString();
         }
+
         return "Manutenção Vazia";
     }
 }

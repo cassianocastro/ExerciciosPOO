@@ -30,10 +30,10 @@ abstract public class Conta
 
     public String getDados()
     {
-        return "\nTipo: " + getClass().getSimpleName()
-            + "\nNº Conta: " + this.num_conta
+        return "\nTipo: "      + getClass().getSimpleName()
+            + "\nNº Conta: "   + this.num_conta
             + "\nNº Agência: " + this.num_agencia
-            + "\nSaldo: R$ " + this.saldo.toString();
+            + "\nSaldo: R$ "   + this.saldo.toString();
     }
 
     public void sacar(String valor)

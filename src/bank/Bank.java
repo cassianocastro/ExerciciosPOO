@@ -4,7 +4,6 @@ import java.util.*;
 
 /**
  *
- *
  */
 public class Bank
 {
@@ -28,8 +27,10 @@ public class Bank
         if ( conta != null )
         {
             this.accounts.remove(conta);
-            return true;
+
+			return true;
         }
+
         return false;
     }
 
@@ -43,8 +44,10 @@ public class Bank
             {
                 msg.append(conta.getDados()).append("\n***\n");
             }
+
             return msg.toString();
         }
+
         return "No accounts!";
     }
 
@@ -57,6 +60,7 @@ public class Bank
                 return conta;
             }
         }
+
         return null;
     }
 

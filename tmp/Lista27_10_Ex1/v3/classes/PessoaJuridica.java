@@ -22,8 +22,10 @@ public class PessoaJuridica extends Pessoa
     public PessoaJuridica(String nome, String endereco, String telefone, String CNPJ, String data_fund)
     {
         super(nome, endereco, telefone);
+
         this.CNPJ      = CNPJ;
         this.data_fund = data_fund;
+
         this.calculaIdade();
     }
 

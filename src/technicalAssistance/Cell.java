@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  *
- *
  */
 public class Cell extends Device implements Serializable
 {

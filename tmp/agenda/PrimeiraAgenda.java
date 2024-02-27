@@ -13,6 +13,7 @@ public class PrimeiraAgenda
     public static void main(String[] args)
     {
         int retorno;
+
         while ( true )
         {
             retorno = JOptionPane.showOptionDialog(
@@ -28,6 +29,7 @@ public class PrimeiraAgenda
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -43,7 +45,8 @@ public class PrimeiraAgenda
                     break;
                 case 2:
                     String nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
-                    JOptionPane.showMessageDialog(
+
+					JOptionPane.showMessageDialog(
                         null,
                         ( agenda.remove(nome) ) ? "Registro removido." : "Registro não encontrado.",
                         null, JOptionPane.INFORMATION_MESSAGE
@@ -75,6 +78,7 @@ public class PrimeiraAgenda
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:

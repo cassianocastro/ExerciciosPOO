@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  *
- *
  */
 public class Notebook extends Device implements Serializable
 {

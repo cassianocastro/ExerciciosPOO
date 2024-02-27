@@ -29,33 +29,39 @@ final public class Agenda
                 return pessoa;
             }
         }
+
         return null;
     }
 
     public boolean remove(String nome)
     {
         Pessoa pessoa = existe(nome);
+
         if ( pessoa != null )
         {
             this.pessoas.remove(pessoa);
+
             return true;
         }
+
         return false;
     }
 
     public StringBuilder exibir()
     {
-        if ( !this.pessoas.isEmpty() )
+        if ( ! this.pessoas.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
+
             for ( Pessoa pessoa : this.pessoas )
             {
                 msg.append(pessoa.getDados());
                 msg.append("\n***\n");
             }
+
             return msg;
         }
+
         return new StringBuilder("Agenda Vazia.");
     }
-
 }

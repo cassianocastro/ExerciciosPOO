@@ -13,6 +13,7 @@ final public class Pessoa_Fisica extends Pessoa
     public Pessoa_Fisica(String nome, String endereco, String fone, String CPF, String data_nasc, float altura)
     {
         super(nome, endereco, fone);
+
         this.CPF       = CPF;
         this.altura    = altura;
         this.data_nasc = data_nasc;

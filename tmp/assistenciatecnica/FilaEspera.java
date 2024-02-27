@@ -19,6 +19,7 @@ public class FilaEspera implements NewInterface
     public void escolher()
     {
         int retorno;
+
         while ( true )
         {
             retorno = JOptionPane.showOptionDialog(
@@ -34,6 +35,7 @@ public class FilaEspera implements NewInterface
                 },
                 null
             );
+
             switch ( retorno )
             {
                 case 0:
@@ -73,12 +75,15 @@ public class FilaEspera implements NewInterface
     {
         String CPF = JOptionPane.showInputDialog("Informe o CPF do cliente:");
 
-        if ( !this.fila.existe(CPF) )
+        if ( ! this.fila.existe(CPF) )
         {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
+
             return;
         }
-        // this.fila.remover( cliente );
+
+        // this.fila.remover(cliente);
+
         JOptionPane.showMessageDialog(null, "Cliente removido.");
     }
 

@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 /**
  *
- *
  */
 abstract public class Account
 {
@@ -17,11 +16,11 @@ abstract public class Account
 
     public Account(int num_conta, int num_agencia, String senha, String saldo, String taxa_juros)
     {
-        this.num_conta = num_conta;
+        this.num_conta   = num_conta;
         this.num_agencia = num_agencia;
-        this.senha = senha;
-        this.saldo = new BigDecimal(saldo);
-        this.taxa_juros = new BigDecimal(taxa_juros);
+        this.senha       = senha;
+        this.saldo       = new BigDecimal(saldo);
+        this.taxa_juros  = new BigDecimal(taxa_juros);
     }
 
     public String getSenha()

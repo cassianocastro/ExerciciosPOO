@@ -30,6 +30,7 @@ public class RepositorioClientes implements Serializable
                 return true;
             }
         }
+
         return false;
     }
 
@@ -40,16 +41,19 @@ public class RepositorioClientes implements Serializable
 
     public StringBuilder exibir()
     {
-        if ( !this.clientes.isEmpty() )
+        if ( ! this.clientes.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
-            for ( Cliente cliente : this.clientes )
+
+		    for ( Cliente cliente : this.clientes )
             {
                 msg.append(cliente.exibir());
                 msg.append("\n-----------");
             }
+
             return msg;
         }
+
         return new StringBuilder("Fila Vazia");
     }
 }
