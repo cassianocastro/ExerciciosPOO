@@ -1,64 +1,100 @@
-package assistenciatecnica;
+package technicalAssistance;
+
 import java.io.Serializable;
 
-public abstract class Aparelho implements Serializable, Comparable<Aparelho>{
-    private String Marca, Modelo, SO, defeito;
-    private int ID, RAM, ROM; 
-    private double tamanho_tela;
-    
-    public Aparelho (String Marca, String Modelo, String SO, String defeito,
-            int ID, int RAM, int ROM, double tamanho_tela){
-        this.Marca          = Marca;
-        this.Modelo         = Modelo;
-        this.SO             = SO;
-        this.defeito        = defeito;
-        this.ID             = ID;
-        this.RAM            = RAM;
-        this.ROM            = ROM;
-        this.tamanho_tela   = tamanho_tela;
+/**
+ *
+ *
+ */
+abstract public class Device implements Serializable, Comparable<Device>
+{
+
+    private final int id;
+    private String mark;
+    private String model;
+    private String so;
+    private String defect;
+    private int ram;
+    private int rom;
+    private float screenSize;
+
+    public Device(String mark, String model, String so, String defect,
+                    int id, int ram, int rom, float screenSize)
+    {
+        this.id      = id;
+        this.mark    = mark;
+        this.model   = model;
+        this.so      = so;
+        this.defect  = defect;
+        this.ram     = ram;
+        this.rom     = rom;
+        this.screenSize = screenSize;
     }
-    
+
     @Override
-    public int compareTo(Aparelho outro_aparelho){
-        if (this.ID < outro_aparelho.getID())
+    public int compareTo(Device other)
+    {
+        if ( this.id < other.getID() )
+        {
             return -1;
-        if (this.ID > outro_aparelho.getID())
+        }
+        if ( this.id > other.getID() )
+        {
             return 1;
+        }
         return 0;
     }
-    public String getEspecificacoes(){
-        return    "\nID do aparelho: "      + this.ID
-                + "\nTipo: "                + getClass().getSimpleName()
-                + "\nMarca: "               + this.Marca
-                + "\nModelo: "              + this.Modelo
-                + "\nSistema Operacional: " + this.SO
-                + "\nDefeito: "             + this.defeito
-                + "\nRAM: "                 + this.RAM + " GB"
-                + "\nROM: "                 + this.ROM + " GB"
-                + "\nTamanho de tela: "     + this.tamanho_tela + "\"";
+
+    public String getEspecificacoes()
+    {
+        return "\nID do aparelho: " + this.id
+            + "\nTipo: " + getClass().getSimpleName()
+            + "\nMarca: " + this.mark
+            + "\nModelo: " + this.model
+            + "\nSistema Operacional: " + this.so
+            + "\nDefeito: " + this.defect
+            + "\nRAM: " + this.ram + " GB"
+            + "\nROM: " + this.rom + " GB"
+            + "\nTamanho de tela: " + this.screenSize + "\"";
     }
-    public int getID(){
-        return this.ID;
+
+    public int getID()
+    {
+        return this.id;
     }
-    public void setMarca(String Marca) {
-        this.Marca = Marca;
+
+    public void setMark(String mark)
+    {
+        this.mark = mark;
     }
-    public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+
+    public void setModel(String model)
+    {
+        this.model = model;
     }
-    public void setSO(String SO) {
-        this.SO = SO;
+
+    public void setSO(String so)
+    {
+        this.so = so;
     }
-    public void setDefeito(String defeito) {
-        this.defeito = defeito;
+
+    public void setDefect(String defect)
+    {
+        this.defect = defect;
     }
-    public void setRAM(int RAM) {
-        this.RAM = RAM;
+
+    public void setRAM(int ram)
+    {
+        this.ram = ram;
     }
-    public void setROM(int ROM) {
-        this.ROM = ROM;
+
+    public void setROM(int rom)
+    {
+        this.rom = rom;
     }
-    public void setTamanho_tela(double tamanho_tela) {
-        this.tamanho_tela = tamanho_tela;
+
+    public void setScreenSize(float screenSize)
+    {
+        this.screenSize = screenSize;
     }
 }

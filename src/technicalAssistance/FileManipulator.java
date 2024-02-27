@@ -1,30 +1,29 @@
-package assistenciatecnica;
-import java.io.*;
-import javax.swing.*;
+package technicalAssistance;
 
-public class Arquivo implements Serializable {
-    
-    public Object ler( File file ) {
-        Object object = null;
-        try ( ObjectInputStream input
-                = new ObjectInputStream(
-                        new FileInputStream( file ))) {
-            object = input.readObject();
-        }catch ( IOException | ClassNotFoundException e ) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+import java.io.*;
+
+/**
+ *
+ *
+ */
+public class FileManipulator implements Serializable
+{
+
+    public Object read(File file) throws IOException, ClassNotFoundException
+    {
+        try (ObjectInputStream input
+            = new ObjectInputStream(new FileInputStream(file)))
+        {
+            return input.readObject();
         }
-        return object;
     }
 
-    public boolean gravar( File file, Object object ) {
-        try ( ObjectOutputStream output
-                = new ObjectOutputStream(
-                        new FileOutputStream( file ))) {
-            output.writeObject( object );
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-            return false;
+    public void write(File file, Object object) throws IOException
+    {
+        try (ObjectOutputStream output
+            = new ObjectOutputStream(new FileOutputStream(file)))
+        {
+            output.writeObject(object);
         }
-        return true;
     }
 }

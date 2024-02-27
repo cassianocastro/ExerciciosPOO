@@ -1,46 +1,60 @@
-package assistenciatecnica;
+package technicalAssistance;
 
 import java.io.Serializable;
 import java.text.*;
 import java.util.*;
 
-public class Cliente implements Serializable, Comparable<Cliente> {
+/**
+ *
+ *
+ */
+public class Client implements Serializable, Comparable<Client>
+{
 
-    private String nome, CPF, email, telefone;
-    private Date dataNascimento;
-    private Aparelho aparelho;
+    private final String name;
+    private final String cpf;
+    private final String email;
+    private final String phone;
+    private final Date birthDate;
+    private Device device;
 
-    public Cliente(String nome, String CPF, String email, String telefone, String dataNascimento) throws ParseException {
-        this.nome           = nome;
-        this.CPF            = CPF;
-        this.email          = email;
-        this.telefone       = telefone;
-        this.dataNascimento = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento);
+    public Client(String name, String cpf, String email, String phone, String birthDate) throws ParseException
+    {
+        this.name      = name;
+        this.cpf       = cpf;
+        this.email     = email;
+        this.phone     = phone;
+        this.birthDate = new SimpleDateFormat("dd/MM/yyyy").parse(birthDate);
     }
 
     @Override
-    public int compareTo(Cliente outro_cliente) {
-        return this.CPF.compareTo(outro_cliente.CPF);
+    public int compareTo(Client other)
+    {
+        return this.cpf.compareTo(other.cpf);
     }
 
-    public String exibir() {
-        return "\nNome: "               + this.nome +
-               "\nCPF: "                + this.CPF +
-               "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format( this.dataNascimento ) +
-               "\nE-mail: "             + this.email +
-               "\nTelefone: "           + this.telefone +
-               "\nID do Aparelho: "     + this.aparelho.getID();
+    public String exibir()
+    {
+        return "\nNome: " + this.name
+            + "\nCPF: " + this.cpf
+            + "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format(this.birthDate)
+            + "\nE-mail: " + this.email
+            + "\nTelefone: " + this.phone
+            + "\nID do Aparelho: " + this.device.getID();
     }
 
-    public Aparelho getAparelho() {
-        return this.aparelho;
-    }
-    
-    public void setAparelho(Aparelho novoAparelho){
-        this.aparelho = novoAparelho;
+    public Device getDevice()
+    {
+        return this.device;
     }
 
-    public String getCPF() {
-        return this.CPF;
+    public void setDevice(Device device)
+    {
+        this.device = device;
+    }
+
+    public String getCPF()
+    {
+        return this.cpf;
     }
 }

@@ -1,9 +1,17 @@
-package assistenciatecnica;
+package technicalAssistance;
+
 import java.io.Serializable;
 
-public class Celular extends Aparelho implements Serializable{
-    public Celular(String Marca, String Modelo, String SO, String defeito, 
-        int ID, int RAM, int ROM, double tamanho_tela){
-        super(Marca, Modelo, SO, defeito, ID, RAM, ROM, tamanho_tela);
+/**
+ *
+ *
+ */
+public class Cell extends Device implements Serializable
+{
+
+    public Cell(String mark, String model, String so, String defect,
+                   int id, int ram, int rom, float screenSize)
+    {
+        super(mark, model, so, defect, id, ram, rom, screenSize);
     }
 }

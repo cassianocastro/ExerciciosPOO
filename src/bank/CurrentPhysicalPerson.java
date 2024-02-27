@@ -1,7 +1,14 @@
-package banco;
+package bank;
 
-public class CorrentePessoaFisica extends Conta{
-    public CorrentePessoaFisica(int num_conta, int num_agencia, String senha, String saldo, String taxa){
-        super (num_conta, num_agencia, senha, saldo, taxa);
+/**
+ *
+ *
+ */
+public class CurrentPhysicalPerson extends Account
+{
+
+    public CurrentPhysicalPerson(int num_conta, int num_agencia, String senha, String saldo, String taxa)
+    {
+        super(num_conta, num_agencia, senha, saldo, taxa);
     }
 }

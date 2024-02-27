@@ -1,38 +1,56 @@
-package assistenciatecnica;
+package technicalAssistance;
+
 import java.util.*;
 import java.io.*;
 
-public class RepositorioClientes implements Serializable{
-    private Set<Cliente> clientes;
-    
-    public RepositorioClientes(){
-        this.clientes = new TreeSet<>();
+/**
+ *
+ *
+ */
+public class ClientRepository implements Serializable
+{
+
+    private final Set<Client> clients;
+
+    public ClientRepository()
+    {
+        this.clients = new TreeSet<>();
     }
-    
-    public void add(Cliente cliente){
-        this.clientes.add(cliente);
+
+    public void add(Client client)
+    {
+        this.clients.add(client);
     }
-    
-    public boolean existe(String CPF){
-        for (Cliente cliente : this.clientes) {
-            if (cliente.getCPF().equals(CPF)) return true;
+
+    public boolean exists(String cpf)
+    {
+        for ( Client client : this.clients )
+        {
+            if ( client.getCPF().equals(cpf) )
+            {
+                return true;
+            }
         }
         return false;
     }
-    
-    public void remover(Cliente cliente){
-        this.clientes.remove(cliente);
+
+    public void remove(Client client)
+    {
+        this.clients.remove(client);
     }
-    
-    public StringBuilder exibir(){
-        if ( ! this.clientes.isEmpty() ){
+
+    public String show()
+    {
+        if ( ! this.clients.isEmpty() )
+        {
             StringBuilder msg = new StringBuilder();
-            for (Cliente cliente : this.clientes){
-                msg.append(cliente.exibir());
-                msg.append("\n-----------");
+            
+            for ( Client client : this.clients )
+            {
+                msg.append(client.exibir()).append("\n----");
             }
-            return msg;
+            return msg.toString();
         }
-        return new StringBuilder("Fila Vazia");
+        return "Fila Vazia";
     }
 }

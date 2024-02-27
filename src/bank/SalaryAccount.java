@@ -1,8 +1,14 @@
+package bank;
 
-package banco;
+/**
+ *
+ *
+ */
+public class SalaryAccount extends Account
+{
 
-public class ContaSalario extends Conta{
-    public ContaSalario(int num_conta, int num_agencia, String senha, String saldo, String taxa){
-        super (num_conta, num_agencia, senha, saldo, taxa);
+    public SalaryAccount(int num_conta, int num_agencia, String senha, String saldo, String taxa)
+    {
+        super(num_conta, num_agencia, senha, saldo, taxa);
     }
 }

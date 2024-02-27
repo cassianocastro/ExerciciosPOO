@@ -1,43 +1,69 @@
-package banco;
+package bank;
+
 import java.util.*;
 
-public class Banco {
-    private List<Conta> contas;
-    
-    public Banco(){
-        this.contas = new ArrayList<>();
+/**
+ *
+ *
+ */
+public class Bank
+{
+
+    private final List<Account> accounts;
+
+    public Bank()
+    {
+        this.accounts = new ArrayList<>();
     }
-    //--------------------------------------
-    public void add(Conta conta){
-        this.contas.add(conta);
+
+    public void add(Account conta)
+    {
+        this.accounts.add(conta);
     }
-    public boolean remove(String senha){
-        Conta conta = existe(senha);
-        if ( conta != null ) {
-            this.contas.remove(conta);
+
+    public boolean remove(String senha)
+    {
+        Account conta = this.existe(senha);
+
+        if ( conta != null )
+        {
+            this.accounts.remove(conta);
             return true;
         }
         return false;
     }
-    public StringBuilder exibir(){
-        if ( ! this.contas.isEmpty() ) {
+
+    public String exibir()
+    {
+        if ( ! this.accounts.isEmpty() )
+        {
             StringBuilder msg = new StringBuilder();
-            for (Conta conta : this.contas) {
-                msg.append( conta.getDados() );
-                msg.append( "\n***\n" );
+
+            for ( Account conta : this.accounts )
+            {
+                msg.append(conta.getDados()).append("\n***\n");
             }
-            return msg;
+            return msg.toString();
+        }
+        return "No accounts!";
+    }
+
+    public Account existe(String senha)
+    {
+        for ( Account conta : this.accounts )
+        {
+            if ( conta.getSenha().equals(senha) )
+            {
+                return conta;
+            }
         }
         return null;
     }
-    public Conta existe(String senha){
-        for (Conta conta : this.contas) {
-            if ( conta.getSenha().equals(senha) ) return conta;
-        }
-        return null;
-    }
-    public void corrigir(){
-        for (Conta conta : this.contas) {
+
+    public void corrigir()
+    {
+        for ( Account conta : this.accounts )
+        {
             conta.aplicarCorrecao();
         }
     }

@@ -1,25 +1,41 @@
-package assistenciatecnica;
+package technicalAssistance;
 
 import javax.swing.*;
 
-public class FilaEspera implements NewInterface{
-    private RepositorioClientes fila;
+/**
+ *
+ *
+ */
+public class Queue
+{
 
-    public FilaEspera() {
-        this.fila = new RepositorioClientes();
+    private final ClientRepository fila;
+
+    public Queue()
+    {
+        this.fila = new ClientRepository();
     }
 
-    @Override
-    public void escolher() {
+    public void escolher()
+    {
         int retorno;
-        while ( true ) {
-            retorno = JOptionPane.showOptionDialog(null, "Selecione uma opção:", "Opções",
-                      JOptionPane.DEFAULT_OPTION,
-                      JOptionPane.INFORMATION_MESSAGE,
-                      null,
-                      new String[] {"Inserir", "Listar", "Remover", "Alterar", "Voltar"},
-                      null );
-            switch ( retorno ){
+        while ( true )
+        {
+            retorno = JOptionPane.showOptionDialog(
+                null,
+                "Selecione uma opção:",
+                "Opções",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                new String[]
+                {
+                    "Inserir", "Listar", "Remover", "Alterar", "Voltar"
+                },
+                null
+            );
+            switch ( retorno )
+            {
                 case 0:
                     inserir();
                     break;
@@ -37,52 +53,54 @@ public class FilaEspera implements NewInterface{
             }
         }
     }
-    
-    @Override
-    public void inserir() {
+
+    private void inserir()
+    {
         String nome     = JOptionPane.showInputDialog("Nome do cliente:");
         String cpf      = JOptionPane.showInputDialog("CPF:");
         String dataNasc = JOptionPane.showInputDialog("Data de Nascimento:");
         String email    = JOptionPane.showInputDialog("E-mail:");
         String telefone = JOptionPane.showInputDialog("Telefone:");
-        
-        //Cliente cliente = new Cliente(nome, cpf, email, telefone, dataNasc);
-        //this.fila.add(cliente);
+
+        // Cliente cliente = new Cliente(nome, cpf, email, telefone, dataNasc);
+        // this.fila.add(cliente);
         JOptionPane.showMessageDialog(null, "Cadastro realizado.");
     }
 
-    @Override
-    public void remover() {
+    private void remover()
+    {
         String CPF = JOptionPane.showInputDialog("Informe o CPF do cliente:");
-        if ( ! this.fila.existe(CPF) ){
+        if ( !this.fila.exists(CPF) )
+        {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
             return;
         }
-        //this.fila.remover( cliente );
-        JOptionPane.showMessageDialog(null,  "Cliente removido.");
+        // this.fila.remover( cliente );
+        JOptionPane.showMessageDialog(null, "Cliente removido.");
     }
 
-    @Override
-    public void listar() {
+    private void listar()
+    {
         JOptionPane.showMessageDialog(
-                null,
-                this.fila.exibir(),
-                "Clientes",
-                JOptionPane.INFORMATION_MESSAGE);
+            null,
+            this.fila.show(),
+            "Clientes",
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }
 
-    @Override
-    public void alterar() {
-        
+    private void alterar()
+    {
+
     }
 
-    @Override
-    public void salvar() {
-        
+    private void salvar()
+    {
+
     }
 
-    @Override
-    public void abrir() {
-        
+    private void abrir()
+    {
+
     }
 }

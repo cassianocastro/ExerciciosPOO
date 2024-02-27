@@ -1,38 +1,54 @@
-package assistenciatecnica;
+package technicalAssistance;
+
 import java.io.*;
 import java.util.*;
 
-public class RepositorioAparelhos implements Serializable {
-    private Map<Integer, Aparelho> defeituosos;
+/**
+ *
+ *
+ */
+public class DeviceRepository implements Serializable
+{
 
-    public RepositorioAparelhos() {
-        this.defeituosos = new HashMap<>();
+    private final Map<Integer, Device> defectives;
+
+    public DeviceRepository()
+    {
+        this.defectives = new HashMap<>();
     }
 
-    public void addAparelho(int ID_informado, Aparelho aparelho) {
-        this.defeituosos.put(ID_informado, aparelho);
+    public void addDevice(int id, Device device)
+    {
+        this.defectives.put(id, device);
     }
 
-    public Aparelho edicao(int ID) {
-        return this.defeituosos.get(ID);
+    public Device edicao(int id)
+    {
+        return this.defectives.get(id);
     }
 
-    public boolean existe(int ID) {
-        return this.defeituosos.containsKey(ID);
+    public boolean existe(int id)
+    {
+        return this.defectives.containsKey(id);
     }
 
-    public void remover(int ID) {
-        this.defeituosos.remove(ID);
+    public void remover(int id)
+    {
+        this.defectives.remove(id);
     }
 
-    public StringBuilder exibir() {
-        if ( ! this.defeituosos.isEmpty() ) {
+    public String exibir()
+    {
+        if ( ! this.defectives.isEmpty() )
+        {
             StringBuilder msg = new StringBuilder();
-            this.defeituosos.keySet().forEach((ID) -> {
-                msg.append( this.defeituosos.get(ID).getEspecificacoes() );
+            
+            this.defectives.keySet().forEach((ID) ->
+            {
+                msg.append(this.defectives.get(ID).getEspecificacoes());
             });
-            return msg;
+            return msg.toString();
         }
-        return new StringBuilder("Manutenção Vazia");
+        return "Manutenção Vazia";
     }
 }

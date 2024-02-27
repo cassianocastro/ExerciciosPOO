@@ -1,10 +1,17 @@
-package assistenciatecnica;
+package technicalAssistance;
+
 import java.io.Serializable;
 
-public class Notebook extends Aparelho implements Serializable{
-    
-    public Notebook(String Marca, String Modelo, String SO, String defeito, 
-        int ID, int RAM, int ROM, double tamanho_tela){
-        super(Marca, Modelo, SO, defeito, ID, RAM, ROM, tamanho_tela);
+/**
+ *
+ *
+ */
+public class Notebook extends Device implements Serializable
+{
+
+    public Notebook(String mark, String model, String so, String defect,
+                    int id, int ram, int rom, float screenSize)
+    {
+        super(mark, model, so, defect, id, ram, rom, screenSize);
     }
 }
