@@ -1,4 +1,6 @@
 #src/org/json
-lib/MYSQL
-Cell.dat
-Clientes.dat
+build/
+nbproject/
+
+*.dat
+*.xml
