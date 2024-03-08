@@ -7,7 +7,7 @@ import java.util.*;
 /**
  *
  */
-public class Client implements Serializable, Comparable<Client>
+public class Customer implements Serializable, Comparable<Customer>
 {
 
     private final String name;
@@ -17,7 +17,7 @@ public class Client implements Serializable, Comparable<Client>
     private final Date birthdate;
     private Device device;
 
-    public Client(String name, String cpf, String email, String phone, String birthdate) throws ParseException
+    public Customer(String name, String cpf, String email, String phone, String birthdate) throws ParseException
     {
         this.name      = name;
         this.cpf       = cpf;
@@ -42,7 +42,7 @@ public class Client implements Serializable, Comparable<Client>
     }
     
     @Override
-    public int compareTo(Client other)
+    public int compareTo(Customer other)
     {
         return this.cpf.compareTo(other.cpf);
     }
