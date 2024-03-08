@@ -81,7 +81,7 @@ public class CustomersController
 
     private void showCustomers()
     {
-        String msg = new CustomersRepository().show();
+        String msg = new CustomersRepository().toString();
         
         JOptionPane.showMessageDialog(null, msg, "Clientes", JOptionPane.INFORMATION_MESSAGE);
     }
