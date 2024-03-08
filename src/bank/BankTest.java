@@ -98,7 +98,7 @@ public class BankTest
     /**
      * @test
      */
-    public void test()
+    public void index()
     {
         int option;
         String password;
