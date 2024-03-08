@@ -15,13 +15,12 @@ public class BankTest
      */
     private void canAddAccount()
     {
-        Account conta;
         int num_conta   = Integer.parseInt(JOptionPane.showInputDialog("Nº da conta:"));
         int num_agencia = Integer.parseInt(JOptionPane.showInputDialog("Nº da agência:"));
         String senha    = JOptionPane.showInputDialog("Senha:");
         String saldo    = JOptionPane.showInputDialog("Saldo inicial:");
 
-        int retorno = JOptionPane.showOptionDialog(
+        int option = JOptionPane.showOptionDialog(
             null,
             "Escolha uma opção:",
             "Tipo",
@@ -32,22 +31,24 @@ public class BankTest
             null
         );
 
-        switch ( retorno )
+        Account account;
+        
+        switch ( option )
         {
             case 0:
-                conta = new SavingsAccount(num_conta, num_agencia, senha, saldo, "0.09");
+                account = new SavingsAccount(num_conta, num_agencia, senha, saldo, "0.09");
                 break;
             case 1:
-                conta = new SalaryAccount(num_conta, num_agencia, senha, saldo, "0.0");
+                account = new SalaryAccount(num_conta, num_agencia, senha, saldo, "0.0");
                 break;
             case 2:
-                conta = new CurrentJuridicalPerson(num_conta, num_agencia, senha, saldo, "0.035");
+                account = new CurrentJuridicalPerson(num_conta, num_agencia, senha, saldo, "0.035");
                 break;
             default:
-                conta = new CurrentPhysicalPerson(num_conta, num_agencia, senha, saldo, "0.05");
+                account = new CurrentPhysicalPerson(num_conta, num_agencia, senha, saldo, "0.05");
         }
 
-        bank.add(conta);
+        bank.add(account);
 
         JOptionPane.showMessageDialog(null, "Conta criada.");
     }
