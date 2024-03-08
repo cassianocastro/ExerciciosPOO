@@ -15,20 +15,20 @@ public class Bank
         this.accounts = new ArrayList<>();
     }
 
-    public void add(Account conta)
+    public void add(Account account)
     {
-        this.accounts.add(conta);
+        this.accounts.add(account);
     }
 
-    public boolean remove(String senha)
+    public boolean remove(String password)
     {
-        Account conta = this.existe(senha);
+        Account account = this.existe(password);
 
-        if ( conta != null )
+        if ( account != null )
         {
-            this.accounts.remove(conta);
+            this.accounts.remove(account);
 
-			return true;
+            return true;
         }
 
         return false;
@@ -40,9 +40,9 @@ public class Bank
         {
             StringBuilder msg = new StringBuilder();
 
-            for ( Account conta : this.accounts )
+            for ( Account account : this.accounts )
             {
-                msg.append(conta.toString()).append("\n***\n");
+                msg.append(account.toString()).append("\n***\n");
             }
 
             return msg.toString();
@@ -53,11 +53,11 @@ public class Bank
 
     public Account existe(String senha)
     {
-        for ( Account conta : this.accounts )
+        for ( Account account : this.accounts )
         {
-            if ( conta.getPassword().equals(senha) )
+            if ( account.getPassword().equals(senha) )
             {
-                return conta;
+                return account;
             }
         }
 
@@ -66,9 +66,9 @@ public class Bank
 
     public void corrigir()
     {
-        for ( Account conta : this.accounts )
+        for ( Account account : this.accounts )
         {
-            conta.applyCorrection();
+            account.applyCorrection();
         }
     }
 }
