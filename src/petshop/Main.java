@@ -15,12 +15,12 @@ public class Main
      */
     static public void main(String[] args)
     {
-        List<Racao> list = new ArrayList<>();
+        List<DogFood> list = new ArrayList<>();
         
         String name   = JOptionPane.showInputDialog(null, "Name: ");
         String weight = JOptionPane.showInputDialog(null, "Weight: ");
 
-        list.add(new Racao(name, Double.parseDouble(weight)));
+        list.add(new DogFood(name, Double.parseDouble(weight)));
         
         var dialog = new FileDialog();
         
@@ -28,9 +28,9 @@ public class Main
         
         list = dialog.recovery();
         
-        for ( final Racao r : list )
+        for ( final DogFood food : list )
         {
-            JOptionPane.showMessageDialog(null, r.toString());
+            JOptionPane.showMessageDialog(null, food.toString());
         }
     }
 }

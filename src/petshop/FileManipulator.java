@@ -34,7 +34,7 @@ public class FileManipulator
         {
             Object obj = input.readObject();
 
-            return (List<Racao>) obj;
+            return (List<DogFood>) obj;
         }
         catch ( ClassNotFoundException | IOException e )
         {
