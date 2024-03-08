@@ -44,7 +44,7 @@ public class DeviceRepository implements Serializable
 
             this.defectives.keySet().forEach((ID) ->
             {
-                msg.append(this.defectives.get(ID).getEspecificacoes());
+                msg.append(this.defectives.get(ID).toString());
             });
 
             return msg.toString();
