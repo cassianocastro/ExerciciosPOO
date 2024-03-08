@@ -11,8 +11,8 @@ public class Main
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)
+    static public void main(String[] args)
     {
-        new FileManipulationTest().testWriteAndReadOf(new File("src/files/test.txt"));
+        new FileManipulationTest().canWriteAndRead(new File("src/files/test.txt"));
     }
 }
