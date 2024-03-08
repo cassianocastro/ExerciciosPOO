@@ -13,11 +13,11 @@ public class App
         Maintenance maintenance = new Maintenance();
         Queue queue = new Queue();
 
-        int retorno;
+        int option;
 
         while ( true )
         {
-            retorno = JOptionPane.showOptionDialog(
+            option = JOptionPane.showOptionDialog(
                 null,
                 "Você deseja ver...?",
                 "Olá",
@@ -31,7 +31,7 @@ public class App
                 null
             );
 
-            switch ( retorno )
+            switch ( option )
             {
                 case 0:
                     queue.escolher();
