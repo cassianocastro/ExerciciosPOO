@@ -47,7 +47,7 @@ public class ClientRepository implements Serializable
 
             for ( Client client : this.clients )
             {
-                msg.append(client.exibir()).append("\n----");
+                msg.append(client.toString()).append("\n----");
             }
 
             return msg.toString();
