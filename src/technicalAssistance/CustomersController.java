@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  *
  */
-public class Queue
+public class CustomersController
 {
 
     public void showIndexMenu()
