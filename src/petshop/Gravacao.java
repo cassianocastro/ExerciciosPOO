@@ -13,7 +13,7 @@ public class Gravacao
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException
+    static public void main(String[] args)
     {
         File file;
         Object object;
@@ -37,7 +37,7 @@ public class Gravacao
             {
                 output.writeObject(lista);
             }
-			catch ( IOException e )
+            catch ( IOException e )
             {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
@@ -59,7 +59,7 @@ public class Gravacao
                 object = input.readObject();
                 lista2 = (ArrayList<Racao>) object;
             }
-			catch ( ClassNotFoundException e )
+            catch ( ClassNotFoundException | IOException e )
             {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
