@@ -28,10 +28,7 @@ public class Queue
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                new String[]
-                {
-                    "Inserir", "Listar", "Remover", "Alterar", "Voltar"
-                },
+                new String[] { "Inserir", "Listar", "Remover", "Alterar", "Voltar" },
                 null
             );
 
@@ -65,6 +62,7 @@ public class Queue
 
         // Cliente cliente = new Cliente(nome, cpf, email, telefone, dataNasc);
         // this.fila.add(cliente);
+        
         JOptionPane.showMessageDialog(null, "Cadastro realizado.");
     }
 
