@@ -58,9 +58,9 @@ public class BankTest
      */
     private void canAddAccount()
     {
-        int num_conta   = Integer.parseInt(JOptionPane.showInputDialog("Nº da conta:"));
-        int num_agencia = Integer.parseInt(JOptionPane.showInputDialog("Nº da agência:"));
-        String senha    = JOptionPane.showInputDialog("Senha:");
+        int num_account = Integer.parseInt(JOptionPane.showInputDialog("Nº da conta:"));
+        int num_agency  = Integer.parseInt(JOptionPane.showInputDialog("Nº da agência:"));
+        String password = JOptionPane.showInputDialog("Senha:");
         String saldo    = JOptionPane.showInputDialog("Saldo inicial:");
 
         int option = JOptionPane.showOptionDialog(
@@ -79,16 +79,16 @@ public class BankTest
         switch ( option )
         {
             case 0:
-                account = new SavingsAccount(num_conta, num_agencia, senha, saldo, "0.09");
+                account = new SavingsAccount(num_account, num_agency, password, saldo, "0.09");
                 break;
             case 1:
-                account = new SalaryAccount(num_conta, num_agencia, senha, saldo, "0.0");
+                account = new SalaryAccount(num_account, num_agency, password, saldo, "0.0");
                 break;
             case 2:
-                account = new CurrentJuridicalPerson(num_conta, num_agencia, senha, saldo, "0.035");
+                account = new CurrentJuridicalPerson(num_account, num_agency, password, saldo, "0.035");
                 break;
             default:
-                account = new CurrentPhysicalPerson(num_conta, num_agencia, senha, saldo, "0.05");
+                account = new CurrentPhysicalPerson(num_account, num_agency, password, saldo, "0.05");
         }
 
         bank.add(account);
