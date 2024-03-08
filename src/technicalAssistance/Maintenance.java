@@ -15,7 +15,7 @@ public class Maintenance
         this.repository = new DeviceRepository();
     }
 
-    public void escolher()
+    public void showIndexMenu()
     {
         int option;
 
