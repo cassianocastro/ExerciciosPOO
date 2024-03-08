@@ -17,11 +17,11 @@ public class Maintenance
 
     public void escolher()
     {
-        int retorno;
+        int option;
 
         while ( true )
         {
-            retorno = JOptionPane.showOptionDialog(
+            option = JOptionPane.showOptionDialog(
                 null,
                 "Selecione uma opção:",
                 "Opções",
@@ -32,7 +32,7 @@ public class Maintenance
                 null
             );
 
-            switch ( retorno )
+            switch ( option )
             {
                 case 0:
                     inserir();
@@ -54,23 +54,23 @@ public class Maintenance
 
     private void inserir()
     {
-        String Marca        = JOptionPane.showInputDialog("Marca:");
-        String Modelo       = JOptionPane.showInputDialog("Modelo:");
-        String SO           = JOptionPane.showInputDialog("S.O.:");
-        double tamanho_tela = Double.parseDouble(
+        String mark   = JOptionPane.showInputDialog("Marca:");
+        String model  = JOptionPane.showInputDialog("Modelo:");
+        String system = JOptionPane.showInputDialog("S.O.:");
+        double screen = Double.parseDouble(
             JOptionPane.showInputDialog("Tam. da tela:")
         );
 
-        int RAM = Integer.parseInt(JOptionPane.showInputDialog("RAM(GB):"));
-        int ROM = Integer.parseInt(JOptionPane.showInputDialog("ROM(GB):"));
-        int ID  = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um ID para seu aparelho:"));
+        int ram = Integer.parseInt(JOptionPane.showInputDialog("RAM(GB):"));
+        int rom = Integer.parseInt(JOptionPane.showInputDialog("ROM(GB):"));
+        int id  = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um ID para seu aparelho:"));
 
-        while ( this.manutencao.existe(ID) )
+        while ( this.manutencao.existe(id) )
         {
-            ID = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
+            id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
 
-        Object defeito = JOptionPane.showInputDialog(
+        Object defect = JOptionPane.showInputDialog(
             null,
             "Tipo de Problema:",
             "Descrição",
@@ -80,7 +80,7 @@ public class Maintenance
             null
         );
 
-        Object tipo = JOptionPane.showInputDialog(
+        Object type = JOptionPane.showInputDialog(
             null,
             "Tipo de Aparelho:",
             null,
@@ -93,16 +93,16 @@ public class Maintenance
 
     private void remover()
     {
-        int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! this.manutencao.existe(ID) )
+        if ( ! this.manutencao.existe(id) )
         {
             JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
 
             return;
         }
 
-        this.manutencao.remover(ID);
+        this.manutencao.remover(id);
 
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
@@ -119,18 +119,18 @@ public class Maintenance
 
     private void alterar()
     {
-        int ID = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! this.manutencao.existe(ID) )
+        if ( ! this.manutencao.existe(id) )
         {
             JOptionPane.showMessageDialog(null, "ID não encontrado.");
 
             return;
         }
 
-        Device temporario = this.manutencao.edicao(ID);
+        Device tmp = this.manutencao.edicao(id);
         
-        Object retorno = JOptionPane.showInputDialog(
+        Object input = JOptionPane.showInputDialog(
             null,
             "Escolha o tipo de dado:",
             "Opções",
@@ -140,28 +140,28 @@ public class Maintenance
             null
         );
 
-        switch ( retorno.toString() )
+        switch ( input.toString() )
         {
             case "Marca":
-                temporario.setMark(JOptionPane.showInputDialog("Nova Marca:"));
+                tmp.setMark(JOptionPane.showInputDialog("Nova Marca:"));
                 break;
             case "Modelo":
-                temporario.setModel(JOptionPane.showInputDialog("Novo Modelo:"));
+                tmp.setModel(JOptionPane.showInputDialog("Novo Modelo:"));
                 break;
             case "S.O.":
-                temporario.setSO(JOptionPane.showInputDialog("Novo S.O.:"));
+                tmp.setSO(JOptionPane.showInputDialog("Novo S.O.:"));
                 break;
             case "RAM":
-                temporario.setRAM(Integer.parseInt(JOptionPane.showInputDialog("Nova RAM:")));
+                tmp.setRAM(Integer.parseInt(JOptionPane.showInputDialog("Nova RAM:")));
                 break;
             case "ROM":
-                temporario.setROM(Integer.parseInt(JOptionPane.showInputDialog("Nova ROM:")));
+                tmp.setROM(Integer.parseInt(JOptionPane.showInputDialog("Nova ROM:")));
                 break;
             case "Tela":
-                temporario.setScreenSize(Float.parseFloat(JOptionPane.showInputDialog("Novo tam. de tela:")));
+                tmp.setScreenSize(Float.parseFloat(JOptionPane.showInputDialog("Novo tam. de tela:")));
                 break;
             case "Defeito":
-                Object defeito = JOptionPane.showInputDialog(
+                Object defect = JOptionPane.showInputDialog(
                     null,
                     "Novo defeito:",
                     "Tipo de Problema",
@@ -171,7 +171,7 @@ public class Maintenance
                     null
                 );
                 
-                temporario.setDefect(defeito.toString());
+                tmp.setDefect(defect.toString());
         }
     }
 
