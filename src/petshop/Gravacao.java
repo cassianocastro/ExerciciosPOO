@@ -42,7 +42,7 @@ public class Gravacao
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
         }
-		else if ( chooser.showSaveDialog(null) == JFileChooser.CANCEL_OPTION )
+	else if ( chooser.showSaveDialog(null) == JFileChooser.CANCEL_OPTION )
         {
             JOptionPane.showMessageDialog(null, "Op. cancelada");
         }
@@ -66,10 +66,10 @@ public class Gravacao
 
             for ( Racao RaCao : lista2 )
             {
-                JOptionPane.showMessageDialog(null, RaCao.getDados());
+                JOptionPane.showMessageDialog(null, RaCao.toString());
             }
         }
-		else if ( chooser.showOpenDialog(null) == JFileChooser.CANCEL_OPTION )
+	else if ( chooser.showOpenDialog(null) == JFileChooser.CANCEL_OPTION )
         {
             JOptionPane.showMessageDialog(null, "Op. cancelada");
         }
