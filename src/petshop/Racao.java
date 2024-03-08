@@ -8,18 +8,18 @@ import java.io.Serializable;
 public class Racao implements Serializable
 {
 
-    private final String nome;
-    private final double peso;
+    private final String name;
+    private final double weight;
 
-    public Racao(String nome, double peso)
+    public Racao(String name, double weight)
     {
-        this.nome = nome;
-        this.peso = peso;
+        this.name   = name;
+        this.weight = weight;
     }
 
     @Override
     public String toString()
     {
-        return "\nNome: " + this.nome + "\nPeso: " + this.peso;
+        return "\nName: " + this.name + "\nWeight: " + this.weight;
     }
 }
