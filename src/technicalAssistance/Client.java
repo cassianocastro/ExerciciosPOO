@@ -32,7 +32,8 @@ public class Client implements Serializable, Comparable<Client>
         return this.cpf.compareTo(other.cpf);
     }
 
-    public String exibir()
+    @Override
+    public String toString()
     {
         return "\nNome: "              + this.name
             + "\nCPF: "                + this.cpf
