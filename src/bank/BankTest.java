@@ -124,7 +124,7 @@ public class BankTest
                 case 1:
                     password = JOptionPane.showInputDialog("Senha da conta:");
                     
-                    Account account = bank.existe(password);
+                    Account account = bank.exists(password);
 
                     if ( account != null )
                     {
