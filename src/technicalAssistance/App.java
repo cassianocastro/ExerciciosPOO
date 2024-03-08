@@ -10,9 +10,6 @@ public class App
 
     public void start()
     {
-        Maintenance maintenance = new Maintenance();
-        Queue queue = new Queue();
-
         int option;
 
         while ( true )
@@ -31,10 +28,10 @@ public class App
             switch ( option )
             {
                 case 0:
-                    queue.escolher();
+                    new Queue().escolher();
                     break;
                 case 1:
-                    maintenance.escolher();
+                    new Maintenance().escolher();
                     break;
                 default:
                     System.exit(0);
