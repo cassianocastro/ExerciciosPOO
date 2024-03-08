@@ -31,7 +31,7 @@ public class App
                     new Queue().escolher();
                     break;
                 case 1:
-                    new Maintenance().escolher();
+                    new Maintenance().showIndexMenu();
                     break;
                 default:
                     System.exit(0);
