@@ -28,7 +28,7 @@ public class Maintenance
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                new String[] { "Inserir", "Listar", "Remover", "Alterar", "Voltar" },
+                new String[] { "Inserir", "Alterar", "Remover", "Listar", "Voltar" },
                 null
             );
 
@@ -38,13 +38,13 @@ public class Maintenance
                     this.addDevice();
                     break;
                 case 1:
-                    this.showDevices();
+                    this.updateDevice();
                     break;
                 case 2:
                     this.deleteDevice();
                     break;
                 case 3:
-                    this.updateDevice();
+                    this.showDevices();
                     break;
                 default:
                     return;
@@ -90,33 +90,7 @@ public class Maintenance
             null
         );
     }
-
-    private void deleteDevice()
-    {
-        int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
-
-        if ( ! this.repository.existe(id) )
-        {
-            JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
-
-            return;
-        }
-
-        this.repository.remover(id);
-
-        JOptionPane.showMessageDialog(null, "Aparelho removido.");
-    }
-
-    private void showDevices()
-    {
-        JOptionPane.showMessageDialog(
-            null,
-            this.repository.exibir(),
-            "Aparelhos cadastrados",
-            JOptionPane.INFORMATION_MESSAGE
-        );
-    }
-
+    
     private void updateDevice()
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
@@ -173,5 +147,31 @@ public class Maintenance
                 
                 tmp.setDefect(defect.toString());
         }
+    }
+
+    private void deleteDevice()
+    {
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
+
+        if ( ! this.repository.existe(id) )
+        {
+            JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
+
+            return;
+        }
+
+        this.repository.remover(id);
+
+        JOptionPane.showMessageDialog(null, "Aparelho removido.");
+    }
+
+    private void showDevices()
+    {
+        JOptionPane.showMessageDialog(
+            null,
+            this.repository.exibir(),
+            "Aparelhos cadastrados",
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }
 }
