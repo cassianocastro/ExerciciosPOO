@@ -7,7 +7,7 @@ import java.util.List;
 /**
  *
  */
-public class Gravacao
+public class Main
 {
 
     /**
