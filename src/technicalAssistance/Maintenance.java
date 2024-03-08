@@ -174,14 +174,4 @@ public class Maintenance
                 tmp.setDefect(defect.toString());
         }
     }
-
-    private void salvar()
-    {
-
-    }
-
-    private void abrir()
-    {
-
-    }
 }
