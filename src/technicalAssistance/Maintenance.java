@@ -28,10 +28,7 @@ public class Maintenance
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                new String[]
-                {
-                    "Inserir", "Listar", "Remover", "Alterar", "Voltar"
-                },
+                new String[] { "Inserir", "Listar", "Remover", "Alterar", "Voltar" },
                 null
             );
 
@@ -79,10 +76,7 @@ public class Maintenance
             "Descrição",
             JOptionPane.QUESTION_MESSAGE,
             null,
-            new String[]
-            {
-                "Hardware", "Software"
-            },
+            new String[] { "Hardware", "Software" },
             null
         );
 
@@ -92,10 +86,7 @@ public class Maintenance
             null,
             JOptionPane.QUESTION_MESSAGE,
             null,
-            new String[]
-            {
-                "Celular", "Notebook"
-            },
+            new String[] { "Celular", "Notebook" },
             null
         );
     }
@@ -138,16 +129,14 @@ public class Maintenance
         }
 
         Device temporario = this.manutencao.edicao(ID);
+        
         Object retorno = JOptionPane.showInputDialog(
             null,
             "Escolha o tipo de dado:",
             "Opções",
             JOptionPane.QUESTION_MESSAGE,
             null,
-            new String[]
-            {
-                "Marca", "Modelo", "S.O.", "RAM", "ROM", "Tela", "Defeito"
-            },
+            new String[] { "Marca", "Modelo", "S.O.", "RAM", "ROM", "Tela", "Defeito" },
             null
         );
 
@@ -178,12 +167,10 @@ public class Maintenance
                     "Tipo de Problema",
                     JOptionPane.QUESTION_MESSAGE,
                     null,
-                    new String[]
-                    {
-                        "Hardware", "Software"
-                    },
+                    new String[] { "Hardware", "Software" },
                     null
                 );
+                
                 temporario.setDefect(defeito.toString());
         }
     }
