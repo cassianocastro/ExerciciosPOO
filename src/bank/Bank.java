@@ -15,12 +15,12 @@ public class Bank
         this.accounts = new ArrayList<>();
     }
 
-    public void add(Account account)
+    public void add(final Account account)
     {
         this.accounts.add(account);
     }
 
-    public boolean remove(String password)
+    public boolean remove(final String password)
     {
         Account account = this.existe(password);
 
@@ -40,7 +40,7 @@ public class Bank
         {
             StringBuilder msg = new StringBuilder();
 
-            for ( Account account : this.accounts )
+            for ( final Account account : this.accounts )
             {
                 msg.append(account.toString()).append("\n***\n");
             }
@@ -51,11 +51,11 @@ public class Bank
         return "No accounts!";
     }
 
-    public Account existe(String senha)
+    public Account existe(final String password)
     {
-        for ( Account account : this.accounts )
+        for ( final Account account : this.accounts )
         {
-            if ( account.getPassword().equals(senha) )
+            if ( account.getPassword().equals(password) )
             {
                 return account;
             }
@@ -66,7 +66,7 @@ public class Bank
 
     public void corrigir()
     {
-        for ( Account account : this.accounts )
+        for ( final Account account : this.accounts )
         {
             account.applyCorrection();
         }
