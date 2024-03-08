@@ -8,11 +8,11 @@ import javax.swing.*;
 public class Maintenance
 {
 
-    private final DeviceRepository manutencao;
+    private final DeviceRepository repository;
 
     public Maintenance()
     {
-        this.manutencao = new DeviceRepository();
+        this.repository = new DeviceRepository();
     }
 
     public void escolher()
@@ -65,7 +65,7 @@ public class Maintenance
         int rom = Integer.parseInt(JOptionPane.showInputDialog("ROM(GB):"));
         int id  = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um ID para seu aparelho:"));
 
-        while ( this.manutencao.existe(id) )
+        while ( this.repository.existe(id) )
         {
             id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
@@ -95,14 +95,14 @@ public class Maintenance
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! this.manutencao.existe(id) )
+        if ( ! this.repository.existe(id) )
         {
             JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
 
             return;
         }
 
-        this.manutencao.remover(id);
+        this.repository.remover(id);
 
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
@@ -111,7 +111,7 @@ public class Maintenance
     {
         JOptionPane.showMessageDialog(
             null,
-            this.manutencao.exibir(),
+            this.repository.exibir(),
             "Aparelhos cadastrados",
             JOptionPane.INFORMATION_MESSAGE
         );
@@ -121,14 +121,14 @@ public class Maintenance
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! this.manutencao.existe(id) )
+        if ( ! this.repository.existe(id) )
         {
             JOptionPane.showMessageDialog(null, "ID não encontrado.");
 
             return;
         }
 
-        Device tmp = this.manutencao.edicao(id);
+        Device tmp = this.repository.edicao(id);
         
         Object input = JOptionPane.showInputDialog(
             null,
