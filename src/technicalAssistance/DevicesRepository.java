@@ -16,27 +16,28 @@ public class DevicesRepository implements Serializable
         this.defectives = new HashMap<>();
     }
 
-    public void addDevice(int id, Device device)
+    public void add(int id, Device device)
     {
         this.defectives.put(id, device);
     }
 
-    public Device edicao(int id)
+    public Device findByID(int id)
     {
         return this.defectives.get(id);
     }
 
-    public boolean existe(int id)
+    public boolean exists(int id)
     {
         return this.defectives.containsKey(id);
     }
 
-    public void remover(int id)
+    public void remove(int id)
     {
         this.defectives.remove(id);
     }
 
-    public String exibir()
+    @Override
+    public String toString()
     {
         if ( ! this.defectives.isEmpty() )
         {
