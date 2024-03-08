@@ -21,7 +21,7 @@ public class FileManipulationTest
 
             content += newLine;
 
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
+            try ( BufferedWriter writer = new BufferedWriter(new FileWriter(file)) )
             {
                 writer.write(content);
             }
