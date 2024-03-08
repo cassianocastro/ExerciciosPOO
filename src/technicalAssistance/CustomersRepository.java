@@ -9,23 +9,23 @@ import java.io.*;
 public class CustomersRepository implements Serializable
 {
 
-    private final Set<Customer> clients;
+    private final Set<Customer> customers;
 
     public CustomersRepository()
     {
-        this.clients = new TreeSet<>();
+        this.customers = new TreeSet<>();
     }
 
-    public void add(final Customer client)
+    public void add(final Customer customer)
     {
-        this.clients.add(client);
+        this.customers.add(customer);
     }
 
     public boolean exists(final String cpf)
     {
-        for ( final Customer client : this.clients )
+        for ( final Customer customer : this.customers )
         {
-            if ( client.getCPF().equals(cpf) )
+            if ( customer.getCPF().equals(cpf) )
             {
                 return true;
             }
@@ -34,20 +34,20 @@ public class CustomersRepository implements Serializable
         return false;
     }
 
-    public void remove(final Customer client)
+    public void remove(final Customer customer)
     {
-        this.clients.remove(client);
+        this.customers.remove(customer);
     }
 
     public String show()
     {
-        if ( ! this.clients.isEmpty() )
+        if ( ! this.customers.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
 
-            for ( final Customer client : this.clients )
+            for ( final Customer customer : this.customers )
             {
-                msg.append(client.toString()).append("\n----");
+                msg.append(customer.toString()).append("\n----");
             }
 
             return msg.toString();
