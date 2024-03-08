@@ -28,7 +28,7 @@ public class App
             switch ( option )
             {
                 case 0:
-                    new Queue().escolher();
+                    new Queue().showIndexMenu();
                     break;
                 case 1:
                     new Maintenance().showIndexMenu();
