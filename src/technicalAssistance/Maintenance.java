@@ -35,16 +35,16 @@ public class Maintenance
             switch ( option )
             {
                 case 0:
-                    inserir();
+                    this.inserir();
                     break;
                 case 1:
-                    listar();
+                    this.listar();
                     break;
                 case 2:
-                    remover();
+                    this.remover();
                     break;
                 case 3:
-                    alterar();
+                    this.alterar();
                     break;
                 default:
                     return;
