@@ -6,12 +6,12 @@ import java.util.*;
 /**
  *
  */
-public class DeviceRepository implements Serializable
+public class DevicesRepository implements Serializable
 {
 
     private final Map<Integer, Device> defectives;
 
-    public DeviceRepository()
+    public DevicesRepository()
     {
         this.defectives = new HashMap<>();
     }
