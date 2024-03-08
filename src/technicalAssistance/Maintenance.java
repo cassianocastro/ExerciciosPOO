@@ -8,13 +8,6 @@ import javax.swing.*;
 public class Maintenance
 {
 
-    private final DeviceRepository repository;
-
-    public Maintenance()
-    {
-        this.repository = new DeviceRepository();
-    }
-
     public void showIndexMenu()
     {
         int option;
@@ -65,7 +58,7 @@ public class Maintenance
         int rom = Integer.parseInt(JOptionPane.showInputDialog("ROM(GB):"));
         int id  = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um ID para seu aparelho:"));
 
-        while ( this.repository.existe(id) )
+        while ( new DeviceRepository().existe(id) )
         {
             id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
@@ -95,14 +88,14 @@ public class Maintenance
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! this.repository.existe(id) )
+        if ( ! new DeviceRepository().existe(id) )
         {
             JOptionPane.showMessageDialog(null, "ID não encontrado.");
 
             return;
         }
 
-        Device tmp = this.repository.edicao(id);
+        Device tmp = new DeviceRepository().edicao(id);
         
         Object input = JOptionPane.showInputDialog(
             null,
@@ -153,25 +146,22 @@ public class Maintenance
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! this.repository.existe(id) )
+        if ( ! new DeviceRepository().existe(id) )
         {
             JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
 
             return;
         }
 
-        this.repository.remover(id);
+        new DeviceRepository().remover(id);
 
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
 
     private void showDevices()
     {
-        JOptionPane.showMessageDialog(
-            null,
-            this.repository.exibir(),
-            "Aparelhos cadastrados",
-            JOptionPane.INFORMATION_MESSAGE
-        );
+        String msg = new DeviceRepository().exibir();
+        
+        JOptionPane.showMessageDialog(null, msg, "Aparelhos cadastrados", JOptionPane.INFORMATION_MESSAGE);
     }
 }
