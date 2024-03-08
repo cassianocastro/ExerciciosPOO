@@ -16,12 +16,12 @@ public class DevicesController
         {
             option = JOptionPane.showOptionDialog(
                 null,
-                "Selecione uma opção:",
-                "Opções",
+                "Choose an option:",
+                "Options",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                new String[] { "Inserir", "Alterar", "Remover", "Listar", "Voltar" },
+                new String[] { "Add", "Update", "Delete", "Show", "Back" },
                 null
             );
 
@@ -47,11 +47,11 @@ public class DevicesController
 
     private void addDevice()
     {
-        String mark   = JOptionPane.showInputDialog("Marca:");
-        String model  = JOptionPane.showInputDialog("Modelo:");
+        String mark   = JOptionPane.showInputDialog("Mark:");
+        String model  = JOptionPane.showInputDialog("Model:");
         String system = JOptionPane.showInputDialog("S.O.:");
         double screen = Double.parseDouble(
-            JOptionPane.showInputDialog("Tam. da tela:")
+            JOptionPane.showInputDialog("Screen size:")
         );
 
         int ram = Integer.parseInt(JOptionPane.showInputDialog("RAM(GB):"));
@@ -59,8 +59,8 @@ public class DevicesController
 
         Object defect = JOptionPane.showInputDialog(
             null,
-            "Tipo de Problema:",
-            "Descrição",
+            "Defect\'s type:",
+            "Description",
             JOptionPane.QUESTION_MESSAGE,
             null,
             new String[] { "Hardware", "Software" },
@@ -69,7 +69,7 @@ public class DevicesController
 
         Object type = JOptionPane.showInputDialog(
             null,
-            "Tipo de Aparelho:",
+            "Device\'s type:",
             null,
             JOptionPane.QUESTION_MESSAGE,
             null,
@@ -80,11 +80,11 @@ public class DevicesController
     
     private void updateDevice()
     {
-        int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Device\'s ID:"));
 
         if ( ! new DevicesRepository().exists(id) )
         {
-            JOptionPane.showMessageDialog(null, "ID não encontrado.");
+            JOptionPane.showMessageDialog(null, "ID not found.");
 
             return;
         }
@@ -93,39 +93,39 @@ public class DevicesController
         
         Object input = JOptionPane.showInputDialog(
             null,
-            "Escolha o tipo de dado:",
-            "Opções",
+            "Choose the data type:",
+            "Options",
             JOptionPane.QUESTION_MESSAGE,
             null,
-            new String[] { "Marca", "Modelo", "S.O.", "RAM", "ROM", "Tela", "Defeito" },
+            new String[] { "Mark", "Model", "S.O.", "RAM", "ROM", "Screen", "Defect" },
             null
         );
 
         switch ( input.toString() )
         {
-            case "Marca":
-                tmp.setMark(JOptionPane.showInputDialog("Nova Marca:"));
+            case "Mark":
+                tmp.setMark(JOptionPane.showInputDialog("New mark:"));
                 break;
-            case "Modelo":
-                tmp.setModel(JOptionPane.showInputDialog("Novo Modelo:"));
+            case "Model":
+                tmp.setModel(JOptionPane.showInputDialog("New model:"));
                 break;
             case "S.O.":
-                tmp.setSO(JOptionPane.showInputDialog("Novo S.O.:"));
+                tmp.setSO(JOptionPane.showInputDialog("New system:"));
                 break;
             case "RAM":
-                tmp.setRAM(Integer.parseInt(JOptionPane.showInputDialog("Nova RAM:")));
+                tmp.setRAM(Integer.parseInt(JOptionPane.showInputDialog("New RAM memory:")));
                 break;
             case "ROM":
-                tmp.setROM(Integer.parseInt(JOptionPane.showInputDialog("Nova ROM:")));
+                tmp.setROM(Integer.parseInt(JOptionPane.showInputDialog("New ROM memory:")));
                 break;
-            case "Tela":
-                tmp.setScreenSize(Float.parseFloat(JOptionPane.showInputDialog("Novo tam. de tela:")));
+            case "Screen":
+                tmp.setScreenSize(Float.parseFloat(JOptionPane.showInputDialog("New screen size:")));
                 break;
-            case "Defeito":
+            case "Defect":
                 Object defect = JOptionPane.showInputDialog(
                     null,
-                    "Novo defeito:",
-                    "Tipo de Problema",
+                    "New defect:",
+                    "Defect\'s type",
                     JOptionPane.QUESTION_MESSAGE,
                     null,
                     new String[] { "Hardware", "Software" },
@@ -138,24 +138,24 @@ public class DevicesController
 
     private void deleteDevice()
     {
-        int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Device\'s ID:"));
 
         if ( ! new DevicesRepository().exists(id) )
         {
-            JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
+            JOptionPane.showMessageDialog(null, "Device not found.");
 
             return;
         }
 
         new DevicesRepository().remove(id);
 
-        JOptionPane.showMessageDialog(null, "Aparelho removido.");
+        JOptionPane.showMessageDialog(null, "Device removed.");
     }
 
     private void showDevices()
     {
         String msg = new DevicesRepository().toString();
         
-        JOptionPane.showMessageDialog(null, msg, "Aparelhos cadastrados", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, msg, "Registered devices", JOptionPane.INFORMATION_MESSAGE);
     }
 }

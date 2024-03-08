@@ -16,12 +16,12 @@ public class App
         {
             option = JOptionPane.showOptionDialog(
                 null,
-                "Você deseja ver...?",
-                "Olá",
+                "Choose an option",
+                "Hello",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new String[] { "Clientes", "Aparelhos", "Sair" },
+                new String[] { "Customers", "Devices", "Exit" },
                 null
             );
 

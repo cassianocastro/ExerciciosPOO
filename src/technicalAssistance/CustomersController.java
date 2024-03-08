@@ -16,12 +16,12 @@ public class CustomersController
         {
             option = JOptionPane.showOptionDialog(
                 null,
-                "Selecione uma opção:",
-                "Opções",
+                "Choose an option:",
+                "Options",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                new String[] { "Inserir", "Alterar", "Remover", "Listar", "Voltar" },
+                new String[] { "Add", "Update", "Delete", "Show", "Back" },
                 null
             );
 
@@ -47,15 +47,15 @@ public class CustomersController
 
     private void addCustomer()
     {
-        String name      = JOptionPane.showInputDialog("Nome do cliente:");
+        String name      = JOptionPane.showInputDialog("Name:");
         String cpf       = JOptionPane.showInputDialog("CPF:");
-        String birthdate = JOptionPane.showInputDialog("Data de Nascimento:");
+        String birthdate = JOptionPane.showInputDialog("Birthdate:");
         String email     = JOptionPane.showInputDialog("E-mail:");
-        String phone     = JOptionPane.showInputDialog("Telefone:");
+        String phone     = JOptionPane.showInputDialog("Phone:");
 
         // new CustomersRepository().add(new Customer(name, cpf, email, phone, birthdate));
 
-        JOptionPane.showMessageDialog(null, "Cadastro realizado.");
+        JOptionPane.showMessageDialog(null, "Customer registered.");
     }
     
     private void updateCustomer()
@@ -65,24 +65,24 @@ public class CustomersController
 
     private void deleteCustomer()
     {
-        String cpf = JOptionPane.showInputDialog("Informe o CPF do cliente:");
+        String cpf = JOptionPane.showInputDialog("Customer\'s CPF:");
 
         if ( ! new CustomersRepository().exists(cpf) )
         {
-            JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
+            JOptionPane.showMessageDialog(null, "Customer not found.");
 
             return;
         }
 
-        // new CustomersRepository().remover(customer);
+        // new CustomersRepository().remove(customer);
 
-        JOptionPane.showMessageDialog(null, "Cliente removido.");
+        JOptionPane.showMessageDialog(null, "Customer removed.");
     }
 
     private void showCustomers()
     {
         String msg = new CustomersRepository().toString();
         
-        JOptionPane.showMessageDialog(null, msg, "Clientes", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, msg, "Customers", JOptionPane.INFORMATION_MESSAGE);
     }
 }
