@@ -25,10 +25,7 @@ public class BankTest
             JOptionPane.DEFAULT_OPTION,
             JOptionPane.QUESTION_MESSAGE,
             null,
-            new String[]
-            {
-                "Poupança", "Salário", "Corrente Jurídica", "Corrente Física"
-            },
+            new String[] { "Poupança", "Salário", "Corrente Jurídica", "Corrente Física" },
             null
         );
 
@@ -66,10 +63,7 @@ public class BankTest
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new String[]
-                {
-                    "Saque", "Depósito", "Informações", "Voltar"
-                },
+                new String[] { "Saque", "Depósito", "Informações", "Voltar" },
                 null
             );
 
@@ -108,11 +102,7 @@ public class BankTest
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new String[]
-                {
-                    "Nova conta", "Já sou cliente", "Exibir Contas",
-                    "Encerrar Conta", "Aplicar Correções", "Sair"
-                },
+                new String[] { "Nova conta", "Já sou cliente", "Exibir Contas", "Encerrar Conta", "Aplicar Correções", "Sair" },
                 null
             );
 
@@ -129,7 +119,7 @@ public class BankTest
                     {
                         testShowMenu(conta);
                     }
-					else
+                    else
                     {
                         JOptionPane.showMessageDialog(
                             null,
