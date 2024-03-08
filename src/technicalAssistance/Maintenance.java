@@ -35,16 +35,16 @@ public class Maintenance
             switch ( option )
             {
                 case 0:
-                    this.inserir();
+                    this.addDevice();
                     break;
                 case 1:
-                    this.listar();
+                    this.showDevices();
                     break;
                 case 2:
-                    this.remover();
+                    this.deleteDevice();
                     break;
                 case 3:
-                    this.alterar();
+                    this.updateDevice();
                     break;
                 default:
                     return;
@@ -52,7 +52,7 @@ public class Maintenance
         }
     }
 
-    private void inserir()
+    private void addDevice()
     {
         String mark   = JOptionPane.showInputDialog("Marca:");
         String model  = JOptionPane.showInputDialog("Modelo:");
@@ -91,7 +91,7 @@ public class Maintenance
         );
     }
 
-    private void remover()
+    private void deleteDevice()
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
@@ -107,7 +107,7 @@ public class Maintenance
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
 
-    private void listar()
+    private void showDevices()
     {
         JOptionPane.showMessageDialog(
             null,
@@ -117,7 +117,7 @@ public class Maintenance
         );
     }
 
-    private void alterar()
+    private void updateDevice()
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
