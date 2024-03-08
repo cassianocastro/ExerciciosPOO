@@ -15,7 +15,7 @@ public class Queue
         this.repository = new CustomersRepository();
     }
 
-    public void escolher()
+    public void showIndexMenu()
     {
         int option;
 
