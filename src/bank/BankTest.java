@@ -10,7 +10,10 @@ public class BankTest
 
     static private final Bank bank = new Bank();
 
-    private void testAddAccount()
+    /**
+     * @test
+     */
+    private void canAddAccount()
     {
         Account conta;
         int num_conta   = Integer.parseInt(JOptionPane.showInputDialog("Nº da conta:"));
@@ -49,7 +52,10 @@ public class BankTest
         JOptionPane.showMessageDialog(null, "Conta criada.");
     }
 
-    private void testShowMenu(Account conta)
+    /**
+     * @test
+     */
+    private void canShowMenu(Account conta)
     {
         int retorno;
         String valor;
@@ -88,6 +94,9 @@ public class BankTest
         }
     }
 
+    /**
+     * @test
+     */
     public void test()
     {
         int retorno;
@@ -109,7 +118,7 @@ public class BankTest
             switch ( retorno )
             {
                 case 0:
-                    testAddAccount();
+                    this.canAddAccount();
                     break;
                 case 1:
                     senha = JOptionPane.showInputDialog("Senha da conta:");
@@ -117,7 +126,7 @@ public class BankTest
 
                     if ( conta != null )
                     {
-                        testShowMenu(conta);
+                        this.canShowMenu(conta);
                     }
                     else
                     {
