@@ -9,43 +9,43 @@ import java.util.*;
 public class DevicesRepository implements Serializable
 {
 
-    private final Map<Integer, Device> defectives;
+    private final Map<Integer, Device> devices;
 
     public DevicesRepository()
     {
-        this.defectives = new HashMap<>();
+        this.devices = new HashMap<>();
     }
 
     public void add(int id, Device device)
     {
-        this.defectives.put(id, device);
+        this.devices.put(id, device);
     }
     
     public void remove(int id)
     {
-        this.defectives.remove(id);
+        this.devices.remove(id);
     }
     
     public boolean exists(int id)
     {
-        return this.defectives.containsKey(id);
+        return this.devices.containsKey(id);
     }
 
     public Device findByID(int id)
     {
-        return this.defectives.get(id);
+        return this.devices.get(id);
     }
 
     @Override
     public String toString()
     {
-        if ( ! this.defectives.isEmpty() )
+        if ( ! this.devices.isEmpty() )
         {
             StringBuilder msg = new StringBuilder();
 
-            this.defectives.keySet().forEach((ID) ->
+            this.devices.keySet().forEach((ID) ->
             {
-                msg.append(this.defectives.get(ID).toString());
+                msg.append(this.devices.get(ID).toString());
             });
 
             return msg.toString();
