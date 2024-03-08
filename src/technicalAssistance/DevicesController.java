@@ -56,12 +56,6 @@ public class DevicesController
 
         int ram = Integer.parseInt(JOptionPane.showInputDialog("RAM(GB):"));
         int rom = Integer.parseInt(JOptionPane.showInputDialog("ROM(GB):"));
-        int id  = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um ID para seu aparelho:"));
-
-        while ( new DevicesRepository().exists(id) )
-        {
-            id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
-        }
 
         Object defect = JOptionPane.showInputDialog(
             null,
