@@ -23,12 +23,13 @@ abstract public class Account
         this.taxa_juros  = new BigDecimal(taxa_juros);
     }
 
-    public String getSenha()
+    public String getPassword()
     {
         return this.senha;
     }
 
-    public String getDados()
+    @Override
+    public String toString()
     {
         return "\nTipo: "      + getClass().getSimpleName()
             + "\nNº Conta: "   + this.num_conta
@@ -41,12 +42,12 @@ abstract public class Account
         this.saldo = this.saldo.subtract(new BigDecimal(valor));
     }
 
-    public void depositar(String valor)
+    public void deposit(String valor)
     {
         this.saldo = this.saldo.add(new BigDecimal(valor));
     }
 
-    public void aplicarCorrecao()
+    public void applyCorrection()
     {
         BigDecimal juro = this.saldo.multiply(this.taxa_juros);
         this.saldo      = this.saldo.add(juro);
