@@ -56,14 +56,14 @@ public class BankTest
     /**
      * @test
      */
-    private void canShowMenu(Account conta)
+    private void canShowMenu(Account account)
     {
-        int retorno;
-        String valor;
-
+        int option;
+        String value;
+        
         while ( true )
         {
-            retorno = JOptionPane.showOptionDialog(
+            option = JOptionPane.showOptionDialog(
                 null,
                 "Escolha a opção:",
                 "Menu",
@@ -74,18 +74,18 @@ public class BankTest
                 null
             );
 
-            switch ( retorno )
+            switch ( option )
             {
                 case 0:
-                    valor = JOptionPane.showInputDialog("Informe o Valor:");
-                    conta.sacar(valor);
+                    value = JOptionPane.showInputDialog("Informe o Valor:");
+                    account.sacar(value);
                     break;
                 case 1:
-                    valor = JOptionPane.showInputDialog("Informe o Valor:");
-                    conta.depositar(valor);
+                    value = JOptionPane.showInputDialog("Informe o Valor:");
+                    account.depositar(value);
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, conta.getDados());
+                    JOptionPane.showMessageDialog(null, account.getDados());
                     break;
                 default:
                     return;
