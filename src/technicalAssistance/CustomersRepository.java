@@ -6,24 +6,24 @@ import java.io.*;
 /**
  *
  */
-public class ClientRepository implements Serializable
+public class CustomersRepository implements Serializable
 {
 
-    private final Set<Client> clients;
+    private final Set<Customer> clients;
 
-    public ClientRepository()
+    public CustomersRepository()
     {
         this.clients = new TreeSet<>();
     }
 
-    public void add(final Client client)
+    public void add(final Customer client)
     {
         this.clients.add(client);
     }
 
     public boolean exists(final String cpf)
     {
-        for ( final Client client : this.clients )
+        for ( final Customer client : this.clients )
         {
             if ( client.getCPF().equals(cpf) )
             {
@@ -34,7 +34,7 @@ public class ClientRepository implements Serializable
         return false;
     }
 
-    public void remove(final Client client)
+    public void remove(final Customer client)
     {
         this.clients.remove(client);
     }
@@ -45,7 +45,7 @@ public class ClientRepository implements Serializable
         {
             StringBuilder msg = new StringBuilder();
 
-            for ( final Client client : this.clients )
+            for ( final Customer client : this.clients )
             {
                 msg.append(client.toString()).append("\n----");
             }
