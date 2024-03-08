@@ -26,23 +26,6 @@ public class Client implements Serializable, Comparable<Client>
         this.birthdate = new SimpleDateFormat("dd/MM/yyyy").parse(birthdate);
     }
 
-    @Override
-    public int compareTo(Client other)
-    {
-        return this.cpf.compareTo(other.cpf);
-    }
-
-    @Override
-    public String toString()
-    {
-        return "\nNome: "              + this.name
-            + "\nCPF: "                + this.cpf
-            + "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format(this.birthdate)
-            + "\nE-mail: "             + this.email
-            + "\nTelefone: "           + this.phone
-            + "\nID do Aparelho: "     + this.device.getID();
-    }
-
     public Device getDevice()
     {
         return this.device;
@@ -56,5 +39,22 @@ public class Client implements Serializable, Comparable<Client>
     public String getCPF()
     {
         return this.cpf;
+    }
+    
+    @Override
+    public int compareTo(Client other)
+    {
+        return this.cpf.compareTo(other.cpf);
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "\nNome: "              + this.name
+            + "\nCPF: "                + this.cpf
+            + "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format(this.birthdate)
+            + "\nE-mail: "             + this.email
+            + "\nTelefone: "           + this.phone
+            + "\nID do Aparelho: "     + this.device.getID();
     }
 }
