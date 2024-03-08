@@ -5,13 +5,13 @@ import java.io.Serializable;
 /**
  *
  */
-public class Racao implements Serializable
+public class DogFood implements Serializable
 {
 
     private final String name;
     private final double weight;
 
-    public Racao(String name, double weight)
+    public DogFood(String name, double weight)
     {
         this.name   = name;
         this.weight = weight;
