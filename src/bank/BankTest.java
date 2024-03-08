@@ -21,12 +21,12 @@ public class BankTest
         {
             option = JOptionPane.showOptionDialog(
                 null,
-                "Seja bem-vindo.",
-                "Olá",
+                "Welcome...",
+                "Hello",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new String[] { "Nova conta", "Já sou cliente", "Exibir Contas", "Encerrar Conta", "Aplicar Correções", "Sair" },
+                new String[] { "New account", "I\'m a client", "Show accounts", "End account", "Apply corrections", "Exit" },
                 null
             );
 
@@ -58,15 +58,15 @@ public class BankTest
      */
     private void canAddAccount()
     {
-        int num_account = Integer.parseInt(JOptionPane.showInputDialog("Nº da conta:"));
-        int num_agency  = Integer.parseInt(JOptionPane.showInputDialog("Nº da agência:"));
-        String password = JOptionPane.showInputDialog("Senha:");
+        int num_account = Integer.parseInt(JOptionPane.showInputDialog("Account number:"));
+        int num_agency  = Integer.parseInt(JOptionPane.showInputDialog("Agency number:"));
+        String password = JOptionPane.showInputDialog("Password:");
         String saldo    = JOptionPane.showInputDialog("Saldo inicial:");
 
         int option = JOptionPane.showOptionDialog(
             null,
-            "Escolha uma opção:",
-            "Tipo",
+            "Choose a option:",
+            "Type",
             JOptionPane.DEFAULT_OPTION,
             JOptionPane.QUESTION_MESSAGE,
             null,
@@ -93,7 +93,7 @@ public class BankTest
 
         bank.add(account);
 
-        JOptionPane.showMessageDialog(null, "Conta criada.");
+        JOptionPane.showMessageDialog(null, "Created account.");
     }
     
     /**
@@ -101,7 +101,7 @@ public class BankTest
      */
     private void canShowClientMenu()
     {
-        String password = JOptionPane.showInputDialog("Senha da conta:");
+        String password = JOptionPane.showInputDialog("Account\'s password:");
         Account account = bank.exists(password);
 
         if ( account != null )
@@ -113,8 +113,8 @@ public class BankTest
 
         JOptionPane.showMessageDialog(
             null,
-            "Conta não encontrada.",
-            "Erro",
+            "Account not found!",
+            "Error",
             JOptionPane.ERROR_MESSAGE
         );
     }
@@ -131,23 +131,23 @@ public class BankTest
         {
             option = JOptionPane.showOptionDialog(
                 null,
-                "Escolha a opção:",
+                "Choose a option:",
                 "Menu",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new String[] { "Saque", "Depósito", "Informações", "Voltar" },
+                new String[] { "Saque", "Depósito", "Info", "Back" },
                 null
             );
 
             switch ( option )
             {
                 case 0:
-                    value = JOptionPane.showInputDialog("Informe o Valor:");
+                    value = JOptionPane.showInputDialog("Enter the value:");
                     account.sacar(value);
                     break;
                 case 1:
-                    value = JOptionPane.showInputDialog("Informe o Valor:");
+                    value = JOptionPane.showInputDialog("Enter the value:");
                     account.deposit(value);
                     break;
                 case 2:
@@ -168,7 +168,7 @@ public class BankTest
     {
         String msg = bank.exibir();
 
-        JOptionPane.showMessageDialog(null, msg != null ? msg : "Sem contas cadastradas.");
+        JOptionPane.showMessageDialog(null, msg != null ? msg : "No accounts registered.");
     }
     
     /**
@@ -176,11 +176,11 @@ public class BankTest
      */
     private void canDeleteAccount()
     {
-        String password = JOptionPane.showInputDialog("Senha da conta:");
+        String password = JOptionPane.showInputDialog("Account\'s password:");
         
         boolean removed = bank.remove(password);
 
-        JOptionPane.showMessageDialog(null, "Conta " + (removed ? "encerrada." : "não encontrada."));
+        JOptionPane.showMessageDialog(null, "Account " + (removed ? "ended." : "not found."));
     }
     
     /**
@@ -190,6 +190,6 @@ public class BankTest
     {
         bank.corrigir();
 
-        JOptionPane.showMessageDialog(null, "Correções aplicadas.");
+        JOptionPane.showMessageDialog(null, "Corrections applied.");
     }
 }
