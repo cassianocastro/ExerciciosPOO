@@ -82,10 +82,10 @@ public class BankTest
                     break;
                 case 1:
                     value = JOptionPane.showInputDialog("Informe o Valor:");
-                    account.depositar(value);
+                    account.deposit(value);
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, account.getDados());
+                    JOptionPane.showMessageDialog(null, account.toString());
                     break;
                 default:
                     return;

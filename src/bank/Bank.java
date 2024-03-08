@@ -42,7 +42,7 @@ public class Bank
 
             for ( Account conta : this.accounts )
             {
-                msg.append(conta.getDados()).append("\n***\n");
+                msg.append(conta.toString()).append("\n***\n");
             }
 
             return msg.toString();
@@ -55,7 +55,7 @@ public class Bank
     {
         for ( Account conta : this.accounts )
         {
-            if ( conta.getSenha().equals(senha) )
+            if ( conta.getPassword().equals(senha) )
             {
                 return conta;
             }
@@ -68,7 +68,7 @@ public class Bank
     {
         for ( Account conta : this.accounts )
         {
-            conta.aplicarCorrecao();
+            conta.applyCorrection();
         }
     }
 }
