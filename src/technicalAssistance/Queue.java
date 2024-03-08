@@ -95,14 +95,4 @@ public class Queue
     {
 
     }
-
-    private void salvar()
-    {
-
-    }
-
-    private void abrir()
-    {
-
-    }
 }
