@@ -20,20 +20,20 @@ public class DevicesRepository implements Serializable
     {
         this.defectives.put(id, device);
     }
-
-    public Device findByID(int id)
+    
+    public void remove(int id)
     {
-        return this.defectives.get(id);
+        this.defectives.remove(id);
     }
-
+    
     public boolean exists(int id)
     {
         return this.defectives.containsKey(id);
     }
 
-    public void remove(int id)
+    public Device findByID(int id)
     {
-        this.defectives.remove(id);
+        return this.defectives.get(id);
     }
 
     @Override
