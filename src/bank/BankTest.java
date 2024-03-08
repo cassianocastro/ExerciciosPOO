@@ -16,7 +16,6 @@ public class BankTest
     public void index()
     {
         int option;
-        String password;
 
         while ( true )
         {
@@ -37,44 +36,16 @@ public class BankTest
                     this.canAddAccount();
                     break;
                 case 1:
-                    password = JOptionPane.showInputDialog("Senha da conta:");
-                    
-                    Account account = bank.exists(password);
-
-                    if ( account != null )
-                    {
-                        this.canShowMenu(account);
-                    }
-                    else
-                    {
-                        JOptionPane.showMessageDialog(
-                            null,
-                            "Conta não encontrada.",
-                            "Erro",
-                            JOptionPane.ERROR_MESSAGE
-                        );
-                    }
+                    this.canShowClientMenu();
                     break;
                 case 2:
-                    String msg = bank.exibir();
-
-                    JOptionPane.showMessageDialog(
-                        null,
-                        msg != null ? msg : "Sem contas cadastradas."
-                    );
+                    this.canShowAccounts();
                     break;
                 case 3:
-                    password = JOptionPane.showInputDialog("Senha da conta:");
-
-                    JOptionPane.showMessageDialog(
-                        null,
-                        bank.remove(password) ? "Conta encerrada." : "Conta não encontrada."
-                    );
+                    this.canDeleteAccount();
                     break;
                 case 4:
-                    bank.corrigir();
-
-                    JOptionPane.showMessageDialog(null, "Correções aplicadas.");
+                    this.canApplyChanges();
                     break;
                 default:
                     System.exit(0);
@@ -124,6 +95,29 @@ public class BankTest
 
         JOptionPane.showMessageDialog(null, "Conta criada.");
     }
+    
+    /**
+     * @test
+     */
+    private void canShowClientMenu()
+    {
+        String password = JOptionPane.showInputDialog("Senha da conta:");
+        Account account = bank.exists(password);
+
+        if ( account != null )
+        {
+            this.canShowMenu(account);
+
+            return;
+        }
+
+        JOptionPane.showMessageDialog(
+            null,
+            "Conta não encontrada.",
+            "Erro",
+            JOptionPane.ERROR_MESSAGE
+        );
+    }
 
     /**
      * @test
@@ -165,5 +159,37 @@ public class BankTest
 
             JOptionPane.showMessageDialog(null, "Operação realizada.");
         }
+    }
+    
+    /**
+     * @test
+     */
+    private void canShowAccounts()
+    {
+        String msg = bank.exibir();
+
+        JOptionPane.showMessageDialog(null, msg != null ? msg : "Sem contas cadastradas.");
+    }
+    
+    /**
+     * @test
+     */
+    private void canDeleteAccount()
+    {
+        String password = JOptionPane.showInputDialog("Senha da conta:");
+        
+        boolean removed = bank.remove(password);
+
+        JOptionPane.showMessageDialog(null, "Conta " + (removed ? "encerrada." : "não encontrada."));
+    }
+    
+    /**
+     * @test
+     */
+    private void canApplyChanges()
+    {
+        bank.corrigir();
+
+        JOptionPane.showMessageDialog(null, "Correções aplicadas.");
     }
 }
