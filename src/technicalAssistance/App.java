@@ -28,10 +28,10 @@ public class App
             switch ( option )
             {
                 case 0:
-                    new Queue().showIndexMenu();
+                    new CustomersController().showIndexMenu();
                     break;
                 case 1:
-                    new Maintenance().showIndexMenu();
+                    new DevicesController().showIndexMenu();
                     break;
                 default:
                     System.exit(0);
