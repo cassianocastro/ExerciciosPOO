@@ -8,11 +8,11 @@ import javax.swing.*;
 public class Queue
 {
 
-    private final CustomersRepository fila;
+    private final CustomersRepository repository;
 
     public Queue()
     {
-        this.fila = new CustomersRepository();
+        this.repository = new CustomersRepository();
     }
 
     public void escolher()
@@ -70,7 +70,7 @@ public class Queue
     {
         String CPF = JOptionPane.showInputDialog("Informe o CPF do cliente:");
 
-        if ( ! this.fila.exists(CPF) )
+        if ( ! this.repository.exists(CPF) )
         {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
 
@@ -86,7 +86,7 @@ public class Queue
     {
         JOptionPane.showMessageDialog(
             null,
-            this.fila.show(),
+            this.repository.show(),
             "Clientes",
             JOptionPane.INFORMATION_MESSAGE
         );
