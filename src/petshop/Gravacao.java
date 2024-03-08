@@ -19,13 +19,13 @@ public class Gravacao
         Object object;
         JFileChooser chooser = new JFileChooser();
 
-        String nome = JOptionPane.showInputDialog(null, "Nome: ");
-        String peso = JOptionPane.showInputDialog(null, "Tipo: ");
+        String name   = JOptionPane.showInputDialog(null, "Nome: ");
+        String weight = JOptionPane.showInputDialog(null, "Tipo: ");
 
-        Racao racao = new Racao(nome, Double.parseDouble(peso));
+        Racao racao = new Racao(name, Double.parseDouble(weight));
 
-        List<Racao> lista = new ArrayList<>();
-        lista.add(racao);
+        List<Racao> list = new ArrayList<>();
+        list.add(racao);
 
         if ( chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION )
         {
@@ -35,7 +35,7 @@ public class Gravacao
                 = new ObjectOutputStream(
                     new FileOutputStream(file)))
             {
-                output.writeObject(lista);
+                output.writeObject(list);
             }
             catch ( IOException e )
             {
@@ -50,23 +50,23 @@ public class Gravacao
         if ( chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION )
         {
             file = chooser.getSelectedFile();
-            List<Racao> lista2 = new ArrayList();
+            List<Racao> list2 = new ArrayList();
 
             try (ObjectInputStream input
                 = new ObjectInputStream(
                     new FileInputStream(file)))
             {
                 object = input.readObject();
-                lista2 = (ArrayList<Racao>) object;
+                list2  = (List<Racao>) object;
             }
             catch ( ClassNotFoundException | IOException e )
             {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
 
-            for ( Racao RaCao : lista2 )
+            for ( final Racao r : list2 )
             {
-                JOptionPane.showMessageDialog(null, RaCao.toString());
+                JOptionPane.showMessageDialog(null, r.toString());
             }
         }
 	else if ( chooser.showOpenDialog(null) == JFileChooser.CANCEL_OPTION )
