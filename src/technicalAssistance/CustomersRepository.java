@@ -20,6 +20,11 @@ public class CustomersRepository implements Serializable
     {
         this.customers.add(customer);
     }
+    
+    public void remove(final Customer customer)
+    {
+        this.customers.remove(customer);
+    }
 
     public boolean exists(final String cpf)
     {
@@ -34,12 +39,8 @@ public class CustomersRepository implements Serializable
         return false;
     }
 
-    public void remove(final Customer customer)
-    {
-        this.customers.remove(customer);
-    }
-
-    public String show()
+    @Override
+    public String toString()
     {
         if ( ! this.customers.isEmpty() )
         {
