@@ -58,7 +58,7 @@ public class DevicesController
         int rom = Integer.parseInt(JOptionPane.showInputDialog("ROM(GB):"));
         int id  = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um ID para seu aparelho:"));
 
-        while ( new DevicesRepository().existe(id) )
+        while ( new DevicesRepository().exists(id) )
         {
             id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID já utilizado!! Escolha outro..."));
         }
@@ -88,14 +88,14 @@ public class DevicesController
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! new DevicesRepository().existe(id) )
+        if ( ! new DevicesRepository().exists(id) )
         {
             JOptionPane.showMessageDialog(null, "ID não encontrado.");
 
             return;
         }
 
-        Device tmp = new DevicesRepository().edicao(id);
+        Device tmp = new DevicesRepository().findByID(id);
         
         Object input = JOptionPane.showInputDialog(
             null,
@@ -146,21 +146,21 @@ public class DevicesController
     {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do aparelho:"));
 
-        if ( ! new DevicesRepository().existe(id) )
+        if ( ! new DevicesRepository().exists(id) )
         {
             JOptionPane.showMessageDialog(null, "Aparelho não encontrado.");
 
             return;
         }
 
-        new DevicesRepository().remover(id);
+        new DevicesRepository().remove(id);
 
         JOptionPane.showMessageDialog(null, "Aparelho removido.");
     }
 
     private void showDevices()
     {
-        String msg = new DevicesRepository().exibir();
+        String msg = new DevicesRepository().toString();
         
         JOptionPane.showMessageDialog(null, msg, "Aparelhos cadastrados", JOptionPane.INFORMATION_MESSAGE);
     }
