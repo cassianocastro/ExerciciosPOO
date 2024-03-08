@@ -9,7 +9,10 @@ import java.util.Scanner;
 public class FileManipulationTest
 {
 
-    public void testWriteAndReadOf(File file)
+    /**
+     * @test
+     */
+    public void canWriteAndRead(File file)
     {
         try
         {
@@ -23,7 +26,7 @@ public class FileManipulationTest
                 writer.write(content);
             }
         }
-		catch ( IOException e )
+        catch ( IOException e )
         {
             System.out.println(e.getMessage());
         }
@@ -46,7 +49,7 @@ public class FileManipulationTest
                 builder.append(line).append("\n");
             }
         }
-		catch ( EOFException e )
+	catch ( EOFException e )
         {
             return builder.toString();
         }
