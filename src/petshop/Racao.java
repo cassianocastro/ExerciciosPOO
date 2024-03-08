@@ -17,7 +17,8 @@ public class Racao implements Serializable
         this.peso = peso;
     }
 
-    public String getDados()
+    @Override
+    public String toString()
     {
         return "\nNome: " + this.nome + "\nPeso: " + this.peso;
     }
