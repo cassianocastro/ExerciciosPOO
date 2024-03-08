@@ -8,11 +8,11 @@ import javax.swing.*;
 public class Queue
 {
 
-    private final ClientRepository fila;
+    private final CustomersRepository fila;
 
     public Queue()
     {
-        this.fila = new ClientRepository();
+        this.fila = new CustomersRepository();
     }
 
     public void escolher()
