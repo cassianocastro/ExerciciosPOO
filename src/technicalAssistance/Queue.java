@@ -8,13 +8,6 @@ import javax.swing.*;
 public class Queue
 {
 
-    private final CustomersRepository repository;
-
-    public Queue()
-    {
-        this.repository = new CustomersRepository();
-    }
-
     public void showIndexMenu()
     {
         int option;
@@ -60,7 +53,7 @@ public class Queue
         String email     = JOptionPane.showInputDialog("E-mail:");
         String phone     = JOptionPane.showInputDialog("Telefone:");
 
-        // this.repository.add(new Customer(name, cpf, email, phone, birthdate));
+        // new CustomersRepository().add(new Customer(name, cpf, email, phone, birthdate));
 
         JOptionPane.showMessageDialog(null, "Cadastro realizado.");
     }
@@ -74,25 +67,22 @@ public class Queue
     {
         String cpf = JOptionPane.showInputDialog("Informe o CPF do cliente:");
 
-        if ( ! this.repository.exists(cpf) )
+        if ( ! new CustomersRepository().exists(cpf) )
         {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
 
             return;
         }
 
-        // this.repository.remover(customer);
+        // new CustomersRepository().remover(customer);
 
         JOptionPane.showMessageDialog(null, "Cliente removido.");
     }
 
     private void showCustomers()
     {
-        JOptionPane.showMessageDialog(
-            null,
-            this.repository.show(),
-            "Clientes",
-            JOptionPane.INFORMATION_MESSAGE
-        );
+        String msg = new CustomersRepository().show();
+        
+        JOptionPane.showMessageDialog(null, msg, "Clientes", JOptionPane.INFORMATION_MESSAGE);
     }
 }
