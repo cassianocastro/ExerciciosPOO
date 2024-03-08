@@ -10,7 +10,7 @@ import javax.swing.*;
 public class Arquivo_petshop
 {
 
-    public static void main(String[] args)
+    static public void main(String[] args)
     {
         File file         = new File("racoes.dat");
         List<Racao> lista = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Arquivo_petshop
         {
             output.writeObject(lista);
         }
-		catch ( IOException e )
+	catch ( IOException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -43,7 +43,7 @@ public class Arquivo_petshop
             object = input.readObject();
             lista2 = (List<Racao>) object;
         }
-		catch ( IOException | ClassNotFoundException e )
+	catch ( IOException | ClassNotFoundException e )
         {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -52,7 +52,7 @@ public class Arquivo_petshop
 
         for ( Racao i : lista2 )
         {
-            msg.append(i.getDados());
+            msg.append(i.toString());
         }
 
         JOptionPane.showMessageDialog(null, msg);
