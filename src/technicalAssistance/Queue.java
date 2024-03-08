@@ -28,7 +28,7 @@ public class Queue
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                new String[] { "Inserir", "Listar", "Remover", "Alterar", "Voltar" },
+                new String[] { "Inserir", "Alterar", "Remover", "Listar", "Voltar" },
                 null
             );
 
@@ -38,13 +38,13 @@ public class Queue
                     this.addCustomer();
                     break;
                 case 1:
-                    this.showCustomers();
+                    this.updateCustomer();
                     break;
                 case 2:
                     this.deleteCustomer();
                     break;
                 case 3:
-                    this.updateCustomer();
+                    this.showCustomers();
                     break;
                 default:
                     return;
@@ -63,6 +63,11 @@ public class Queue
         // this.repository.add(new Customer(name, cpf, email, phone, birthdate));
 
         JOptionPane.showMessageDialog(null, "Cadastro realizado.");
+    }
+    
+    private void updateCustomer()
+    {
+
     }
 
     private void deleteCustomer()
@@ -89,10 +94,5 @@ public class Queue
             "Clientes",
             JOptionPane.INFORMATION_MESSAGE
         );
-    }
-
-    private void updateCustomer()
-    {
-
     }
 }
