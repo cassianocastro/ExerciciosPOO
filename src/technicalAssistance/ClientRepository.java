@@ -16,14 +16,14 @@ public class ClientRepository implements Serializable
         this.clients = new TreeSet<>();
     }
 
-    public void add(Client client)
+    public void add(final Client client)
     {
         this.clients.add(client);
     }
 
-    public boolean exists(String cpf)
+    public boolean exists(final String cpf)
     {
-        for ( Client client : this.clients )
+        for ( final Client client : this.clients )
         {
             if ( client.getCPF().equals(cpf) )
             {
@@ -34,7 +34,7 @@ public class ClientRepository implements Serializable
         return false;
     }
 
-    public void remove(Client client)
+    public void remove(final Client client)
     {
         this.clients.remove(client);
     }
@@ -45,7 +45,7 @@ public class ClientRepository implements Serializable
         {
             StringBuilder msg = new StringBuilder();
 
-            for ( Client client : this.clients )
+            for ( final Client client : this.clients )
             {
                 msg.append(client.toString()).append("\n----");
             }
