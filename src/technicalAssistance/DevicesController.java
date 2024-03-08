@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  *
  */
-public class Maintenance
+public class DevicesController
 {
 
     public void showIndexMenu()
