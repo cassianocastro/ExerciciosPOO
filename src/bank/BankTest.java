@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class BankTest
 {
 
-    private static final Bank banco = new Bank();
+    static private final Bank bank = new Bank();
 
     private void testAddAccount()
     {
@@ -44,7 +44,7 @@ public class BankTest
                 conta = new CurrentPhysicalPerson(num_conta, num_agencia, senha, saldo, "0.05");
         }
 
-        banco.add(conta);
+        bank.add(conta);
 
         JOptionPane.showMessageDialog(null, "Conta criada.");
     }
@@ -113,7 +113,7 @@ public class BankTest
                     break;
                 case 1:
                     senha = JOptionPane.showInputDialog("Senha da conta:");
-                    Account conta = banco.existe(senha);
+                    Account conta = bank.existe(senha);
 
                     if ( conta != null )
                     {
@@ -130,7 +130,7 @@ public class BankTest
                     }
                     break;
                 case 2:
-                    String msg = banco.exibir();
+                    String msg = bank.exibir();
 
                     JOptionPane.showMessageDialog(
                         null,
@@ -142,11 +142,11 @@ public class BankTest
 
                     JOptionPane.showMessageDialog(
                         null,
-                        banco.remove(senha) ? "Conta encerrada." : "Conta não encontrada."
+                        bank.remove(senha) ? "Conta encerrada." : "Conta não encontrada."
                     );
                     break;
                 case 4:
-                    banco.corrigir();
+                    bank.corrigir();
 
                     JOptionPane.showMessageDialog(null, "Correções aplicadas.");
                     break;
