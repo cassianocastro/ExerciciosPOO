@@ -35,16 +35,16 @@ public class Queue
             switch ( option )
             {
                 case 0:
-                    inserir();
+                    this.addCustomer();
                     break;
                 case 1:
-                    listar();
+                    this.showCustomers();
                     break;
                 case 2:
-                    remover();
+                    this.deleteCustomer();
                     break;
                 case 3:
-                    alterar();
+                    this.updateCustomer();
                     break;
                 default:
                     return;
@@ -52,7 +52,7 @@ public class Queue
         }
     }
 
-    private void inserir()
+    private void addCustomer()
     {
         String name      = JOptionPane.showInputDialog("Nome do cliente:");
         String cpf       = JOptionPane.showInputDialog("CPF:");
@@ -65,7 +65,7 @@ public class Queue
         JOptionPane.showMessageDialog(null, "Cadastro realizado.");
     }
 
-    private void remover()
+    private void deleteCustomer()
     {
         String cpf = JOptionPane.showInputDialog("Informe o CPF do cliente:");
 
@@ -81,7 +81,7 @@ public class Queue
         JOptionPane.showMessageDialog(null, "Cliente removido.");
     }
 
-    private void listar()
+    private void showCustomers()
     {
         JOptionPane.showMessageDialog(
             null,
@@ -91,7 +91,7 @@ public class Queue
         );
     }
 
-    private void alterar()
+    private void updateCustomer()
     {
 
     }
