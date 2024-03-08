@@ -46,7 +46,8 @@ abstract public class Device implements Serializable, Comparable<Device>
         return 0;
     }
 
-    public String getEspecificacoes()
+    @Override
+    public String toString()
     {
         return "\nID do aparelho: " + this.id
             + "\nTipo: " + getClass().getSimpleName()
