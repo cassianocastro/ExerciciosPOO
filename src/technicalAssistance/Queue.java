@@ -17,11 +17,11 @@ public class Queue
 
     public void escolher()
     {
-        int retorno;
+        int option;
 
         while ( true )
         {
-            retorno = JOptionPane.showOptionDialog(
+            option = JOptionPane.showOptionDialog(
                 null,
                 "Selecione uma opção:",
                 "Opções",
@@ -32,7 +32,7 @@ public class Queue
                 null
             );
 
-            switch ( retorno )
+            switch ( option )
             {
                 case 0:
                     inserir();
@@ -54,30 +54,29 @@ public class Queue
 
     private void inserir()
     {
-        String nome     = JOptionPane.showInputDialog("Nome do cliente:");
-        String cpf      = JOptionPane.showInputDialog("CPF:");
-        String dataNasc = JOptionPane.showInputDialog("Data de Nascimento:");
-        String email    = JOptionPane.showInputDialog("E-mail:");
-        String telefone = JOptionPane.showInputDialog("Telefone:");
+        String name      = JOptionPane.showInputDialog("Nome do cliente:");
+        String cpf       = JOptionPane.showInputDialog("CPF:");
+        String birthdate = JOptionPane.showInputDialog("Data de Nascimento:");
+        String email     = JOptionPane.showInputDialog("E-mail:");
+        String phone     = JOptionPane.showInputDialog("Telefone:");
 
-        // Cliente cliente = new Cliente(nome, cpf, email, telefone, dataNasc);
-        // this.fila.add(cliente);
-        
+        // this.repository.add(new Customer(name, cpf, email, phone, birthdate));
+
         JOptionPane.showMessageDialog(null, "Cadastro realizado.");
     }
 
     private void remover()
     {
-        String CPF = JOptionPane.showInputDialog("Informe o CPF do cliente:");
+        String cpf = JOptionPane.showInputDialog("Informe o CPF do cliente:");
 
-        if ( ! this.repository.exists(CPF) )
+        if ( ! this.repository.exists(cpf) )
         {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado.");
 
             return;
         }
 
-        // this.fila.remover( cliente );
+        // this.repository.remover(customer);
 
         JOptionPane.showMessageDialog(null, "Cliente removido.");
     }
