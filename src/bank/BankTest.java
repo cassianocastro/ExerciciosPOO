@@ -100,12 +100,12 @@ public class BankTest
      */
     public void test()
     {
-        int retorno;
-        String senha;
+        int option;
+        String password;
 
         while ( true )
         {
-            retorno = JOptionPane.showOptionDialog(
+            option = JOptionPane.showOptionDialog(
                 null,
                 "Seja bem-vindo.",
                 "Olá",
@@ -116,18 +116,19 @@ public class BankTest
                 null
             );
 
-            switch ( retorno )
+            switch ( option )
             {
                 case 0:
                     this.canAddAccount();
                     break;
                 case 1:
-                    senha = JOptionPane.showInputDialog("Senha da conta:");
-                    Account conta = bank.existe(senha);
+                    password = JOptionPane.showInputDialog("Senha da conta:");
+                    
+                    Account account = bank.existe(password);
 
-                    if ( conta != null )
+                    if ( account != null )
                     {
-                        this.canShowMenu(conta);
+                        this.canShowMenu(account);
                     }
                     else
                     {
@@ -148,11 +149,11 @@ public class BankTest
                     );
                     break;
                 case 3:
-                    senha = JOptionPane.showInputDialog("Senha da conta:");
+                    password = JOptionPane.showInputDialog("Senha da conta:");
 
                     JOptionPane.showMessageDialog(
                         null,
-                        bank.remove(senha) ? "Conta encerrada." : "Conta não encontrada."
+                        bank.remove(password) ? "Conta encerrada." : "Conta não encontrada."
                     );
                     break;
                 case 4:
