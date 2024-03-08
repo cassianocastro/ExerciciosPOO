@@ -14,16 +14,16 @@ public class Client implements Serializable, Comparable<Client>
     private final String cpf;
     private final String email;
     private final String phone;
-    private final Date birthDate;
+    private final Date birthdate;
     private Device device;
 
-    public Client(String name, String cpf, String email, String phone, String birthDate) throws ParseException
+    public Client(String name, String cpf, String email, String phone, String birthdate) throws ParseException
     {
         this.name      = name;
         this.cpf       = cpf;
         this.email     = email;
         this.phone     = phone;
-        this.birthDate = new SimpleDateFormat("dd/MM/yyyy").parse(birthDate);
+        this.birthdate = new SimpleDateFormat("dd/MM/yyyy").parse(birthdate);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Client implements Serializable, Comparable<Client>
     {
         return "\nNome: "              + this.name
             + "\nCPF: "                + this.cpf
-            + "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format(this.birthDate)
+            + "\nData de Nascimento: " + new SimpleDateFormat("dd/MM/yyyy").format(this.birthdate)
             + "\nE-mail: "             + this.email
             + "\nTelefone: "           + this.phone
             + "\nID do Aparelho: "     + this.device.getID();
