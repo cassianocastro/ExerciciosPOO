@@ -29,37 +29,7 @@ abstract public class Device implements Serializable, Comparable<Device>
         this.rom     = rom;
         this.screenSize = screenSize;
     }
-
-    @Override
-    public int compareTo(Device other)
-    {
-        if ( this.id < other.getID() )
-        {
-            return -1;
-        }
-
-        if ( this.id > other.getID() )
-        {
-            return 1;
-        }
-
-        return 0;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "\nID do aparelho: " + this.id
-            + "\nTipo: " + getClass().getSimpleName()
-            + "\nMarca: " + this.mark
-            + "\nModelo: " + this.model
-            + "\nSistema Operacional: " + this.so
-            + "\nDefeito: " + this.defect
-            + "\nRAM: " + this.ram + " GB"
-            + "\nROM: " + this.rom + " GB"
-            + "\nTamanho de tela: " + this.screenSize + "\"";
-    }
-
+    
     public int getID()
     {
         return this.id;
@@ -98,5 +68,35 @@ abstract public class Device implements Serializable, Comparable<Device>
     public void setScreenSize(float screenSize)
     {
         this.screenSize = screenSize;
+    }
+
+    @Override
+    public int compareTo(Device other)
+    {
+        if ( this.id < other.getID() )
+        {
+            return -1;
+        }
+
+        if ( this.id > other.getID() )
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "\nID do aparelho: " + this.id
+            + "\nTipo: " + getClass().getSimpleName()
+            + "\nMarca: " + this.mark
+            + "\nModelo: " + this.model
+            + "\nSistema Operacional: " + this.so
+            + "\nDefeito: " + this.defect
+            + "\nRAM: " + this.ram + " GB"
+            + "\nROM: " + this.rom + " GB"
+            + "\nTamanho de tela: " + this.screenSize + "\"";
     }
 }
