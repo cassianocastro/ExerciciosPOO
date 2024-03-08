@@ -22,7 +22,7 @@ public class Bank
 
     public boolean remove(final String password)
     {
-        Account account = this.existe(password);
+        Account account = this.exists(password);
 
         if ( account != null )
         {
@@ -51,7 +51,7 @@ public class Bank
         return "No accounts!";
     }
 
-    public Account existe(final String password)
+    public Account exists(final String password)
     {
         for ( final Account account : this.accounts )
         {
